@@ -50,12 +50,12 @@ class Board:
         self.column_list = [6]
         self.attack_list = [1, 1, 1, 1]
 
-    col_letters_as_numbers = {
-        "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
-    }
-
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
+    }
+
+    col_letters_as_numbers = {
+        "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
     }
 
     def display_board(self):
@@ -71,11 +71,11 @@ class Board:
             row_number += 1
         print(f"\nLives left: {self.lives}\n")
 
-    def place_ships(self, ship_length, row, column, orientation):
+    def place_ships(self, ship_size, row, column, orientation):
         """
         """
         if orientation == "H":
-            if row + ship_length > 6:
+            if row + ship_size > 6:
                 if self.user == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
@@ -84,7 +84,7 @@ class Board:
             else:
                 return True
         else:
-            if column + ship_length > 6:
+            if column + ship_size > 6:
                 if self.user == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
@@ -93,13 +93,13 @@ class Board:
             else:
                 return True
 
-    def check_ship_placement(self, board, row, column, orientation, ship_length):
+    def check_ship_placement(self, board, row, column, orientation, ship_size):
         """
         Function to ensure ships do not overlap when placed.
         If coordinates overlap, prompts user to try again.
         """
         if orientation == "H":
-            for i in range(row, row + ship_length):
+            for i in range(row, row + ship_size):
                 if board[column][i] == SHIP:
                     if self.user == "player":
                         print("\We've already placed a ship here, sir...")
@@ -108,7 +108,7 @@ class Board:
                     else:
                         return True
         else:
-            for i in range(column, column + ship_length):
+            for i in range(column, column + ship_size):
                 if board[i][row] == SHIP:
                     if self.user == "player":
                         print("\We've already placed a ship here, sir...")
@@ -118,22 +118,22 @@ class Board:
                         return True
         return False
 
-    def ship_type(self, ship_length):
+    def ship_type(self, ship_size):
         """
         Allows user to place ships on board.
         """
         print("Please select horizontal or vertical orientation")
         print("Ship coordinates must not overlap")
-        if ship_length == 3:
+        if ship_size == 3:
             print(" ")
             print("We have stolen an imperial Star Destroyer(3), let's deploy it now!\n")
-        elif ship_length == 2:
+        elif ship_size == 2:
             print(" ")
             print("Let's deploy a CR90 Corvette(2)\n")
-        elif ship_length == 1:
+        elif ship_size == 1:
             print("We have an X-wing, let's place that too!")
 
-            
+    def 
 
 
 
