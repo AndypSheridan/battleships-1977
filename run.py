@@ -118,5 +118,24 @@ class Board:
                         return True
         return False
 
+    def ship_type(self, ship_length):
+        """
+        Allows user to place ships on board.
+        """
+        print("Please select horizontal or vertical orientation")
+        print("Ship coordinates must not overlap")
+        if ship_length == 3:
+            print(" ")
+            print("We have stolen an imperial Star Destroyer(3), let's deploy it now!\n")
+        elif ship_length == 2:
+            print(" ")
+            print("Let's deploy a CR90 Corvette(2)\n")
+        elif ship_length == 1:
+            print("We have an X-wing, let's place that too!")
+
+            
+
+
+
 
 
