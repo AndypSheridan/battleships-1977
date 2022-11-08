@@ -377,5 +377,25 @@ class Board:
                 computer_turn += 1
                 player_lives -= 1
                 computer_guess.column_list.append(column)
+                computer_guess.row_list(row)
+                computer_guess.board[row][column] = HIT
+                player_board.board[row][column] = HIT
+                player_board.board.lives_counter()
+                player_board.display_board()
+                computer_guess.attack_list.append(0)
+                time.sleep(2)
+                if player_lives == 0:
+                    print("Sir, our shileds are depleted, we have lost!")
+                    print(" ")
+                    print(END_OF_ROUND)
+                    break
+                else:
+                    print("Sir, they have missed our ships!\n")
+                    computer_guess.board[row][column] = ALREADY_GUESSED
+                    computer_turn += 1
+                    player_board.display_board()
+                    computer_guess.attack_list.append(1)
+                    computer_guess.count_misses()
+                    time.sleep(2)
 
 
