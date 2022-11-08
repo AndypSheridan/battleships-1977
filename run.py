@@ -232,6 +232,25 @@ class Board:
                 row = row_hit - 1
                 return row
 
+    def comp_attack_column(self):
+        """
+        Holds the logic for computers attack.
+        Returns a value for the column based
+        off last hit ship on comp_guess board.
+        """
+        column_hit = self.column_arry[-1]
+        if column_hit == 6:
+            column = random.randint(0, 6)
+            return column
+        else:
+            attk_random = self.random_attk_int()
+            if attk_random == 1:
+                column = column_hit + 1
+                return column
+            elif attk_random == 2:
+                column = column_hit - 1
+                return column
+
 
 
 
