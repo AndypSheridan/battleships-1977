@@ -169,7 +169,7 @@ class Board:
                 print("Please enter a letter A-F")
         return orientation, row, column
 
-    def add_ships_to_board(self):
+    def populate_boards(self):
         """
         Populates boards
         """
@@ -181,6 +181,20 @@ class Board:
                     row = random.randint(0, 3)
                     column = random.randint(0, 3)
                     if self.place_ships(ship_size, row, column, orientation):
-                        if self.check_ship_placement(board, row, column, orientation, ship_size)
+                        if self.check_ship_placement(board, row, column, orientation, ship_size) is False:
+                            if orientation == "H":
+                                for i in range(row, row + ship_size):
+                                    self.board[i][column] = SHIP
+                            else:
+                                for i in range(column, column + ship_size):
+                                    self.board[row][i] = SHIP
+                            break
+                else:
+                    if self.user == "player":
+                        self.ship_type(ship_size)
+                        orientation, row, column = self.player_ship_placement()
+                        if self.place_ships(ship_size, row, column, orientation):
+                            if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
+                                
 
 
