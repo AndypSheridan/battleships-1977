@@ -407,3 +407,12 @@ def play_again():
     print("\nWould you like to play again?")
     player_response = input("Please enter Y or N: \n").upper()
     print(" ")
+    while True:
+        if player_response == "Y":
+            print(END_OF_ROUND)
+            new_game()
+        elif player_response == "N":
+            print(" ")
+            print("Thank you for playing. May the force be with you...always")
+            print(" ")
+            print(END_OF_ROUND)
