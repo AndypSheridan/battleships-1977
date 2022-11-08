@@ -242,34 +242,15 @@ class Board:
         attack_random = random.randint(1, 2)
         return attack_random
 
-    def comp_attack_row(self):
+    def comp_attack_column(self):
         """
         Holds logic for computers attack.
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
-        row_hit = self.row_list[-1]
-        if row_hit == 6:
-            row = random.randint(0, 5)
-            return row
-        else:
-            attack_random = self.random_number()
-            if attack_random == 1:
-                row = row_hit + 1
-                return row
-            elif attack_random == 2:
-                row = row_hit - 1
-                return row
-
-    def comp_attack_column(self):
-        """
-        Holds the logic for computers attack.
-        Returns a value for the column based
-        off last hit ship on comp_guess board.
-        """
         column_hit = self.column_list[-1]
         if column_hit == 6:
-            column = random.randint(0, 6)
+            column = random.randint(0, 5)
             return column
         else:
             attack_random = self.random_number()
@@ -279,6 +260,25 @@ class Board:
             elif attack_random == 2:
                 column = column_hit - 1
                 return column
+
+    def comp_attack_row(self):
+        """
+        Holds the logic for computers attack.
+        Returns a value for the column based
+        off last hit ship on comp_guess board.
+        """
+        row_hit = self.row_list[-1]
+        if row_hit == 6:
+            row = random.randint(0, 6)
+            return row
+        else:
+            attack_random = self.random_number()
+            if attack_random == 1:
+                row = row_hit + 1
+                return row
+            elif attack_random == 2:
+                row = column_hit - 1
+                return row
 
     def player_attack(self):
         """
