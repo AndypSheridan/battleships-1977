@@ -181,8 +181,8 @@ class Board:
                     row = random.randint(0, 3)
                     column = random.randint(0, 3)
                     if self.place_ships(ship_size, row, column, orientation):
-                        if self.check_ship_placement(board, row, column, orientation, ship_size) is False:
-                            if orientation == "H":
+                        if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
+                            if orientation == "V":
                                 for i in range(row, row + ship_size):
                                     self.board[i][column] = SHIP
                             else:
@@ -195,7 +195,7 @@ class Board:
                         orientation, row, column = self.player_ship_placement()
                         if self.place_ships(ship_size, row, column, orientation):
                             if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
-                                if orientation == "H":
+                                if orientation == "V":
                                     for i in range(row, row + ship_size):
                                         self.board[i][column] = SHIP
                                 else:
@@ -377,7 +377,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 computer_turn += 1
                 player_lives -= 1
                 computer_guess.column_list.append(column)
-                computer_guess.row_list(row)
+                computer_guess.row_list.append(row)
                 computer_guess.board[row][column] = HIT
                 player_board.board[row][column] = HIT
                 player_board.board.lives_counter()
