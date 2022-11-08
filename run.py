@@ -1,14 +1,22 @@
+"""
+Import libaries:
+colorama used for text color,
+random used for random choice and number,
+time to simulate computer though process,
+re to allow checking if a regular expression matches a string
+"""
+from colorama import Fore
 import random
 import time
 import re
 
 
 # Global variables used in game boards
+END_OF_ROUND = "*" * 80
+ALREADY_GUESSED = "0"
 EMPTY = "-"
 SHIP = "@"
 HIT = "X"
-ALREADY_GUESSED = "0"
-END_OF_ROUND = "*" * 80
 
 
 def start_screen():
@@ -19,25 +27,30 @@ def start_screen():
     See credits for ASCII art.
     """
     print("""\
-__________         __    __  .__                                       
-\______   \_____ _/  |__/  |_|  |   ____                               
- |    |  _/\__  \\   __\   __\  | _/ __ \    ______   ______           
- |    |   \ / __ \|  |  |  | |  |_\  ___/   /_____/  /_____/           
- |______  /(____  /__|  |__| |____/\___  >                             
-        \/      \/                     \/                              
-  _________.__    .__                  ____ __________________________ 
- /   _____/|  |__ |__|_____  ______   /_   /   __   \______  \______  \
- \_____  \ |  |  \|  \____ \/  ___/    |   \____    /   /    /   /    /
- /        \|   Y  \  |  |_> >___ \     |   |  /    /   /    /   /    / 
-/_______  /|___|  /__|   __/____  >    |___| /____/   /____/   /____/  
-        \/      \/   |__|       \/                                     
+
+                 __________         __    __  .__                            
+                 \______   \_____ _/  |__/  |_|  |   ____                    
+  ______   ______ |    |  _/\__  \\   __\   __\  | _/ __ \   ______   ______ 
+ /_____/  /_____/ |    |   \ / __ \|  |  |  | |  |_\  ___/  /_____/  /_____/ 
+                  |______  /(____  /__|  |__| |____/\___  >                  
+                         \/      \/                     \/                   
+  _________.__    .__                 ____ __________________________        
+ /   _____/|  |__ |__|_____  ______  /_   /   __   \______  \______  \       
+ \_____  \ |  |  \|  \____ \/  ___/   |   \____    /   /    /   /    /       
+ /        \|   Y  \  |  |_> >___ \    |   |  /    /   /    /   /    /        
+/_______  /|___|  /__|   __/____  >   |___| /____/   /____/   /____/         
+        \/      \/   |__|       \/                                           
+
                                                                       
 """)
-    print("\nA hostile Imperial fleet has jumped from Hyperspace and is \
+    print(Fore.CYAN + "A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
-    print("You have 10 attempts to destroy the enemy!")
-    print(f"Coordinates marked {EMPTY} have not been guessed")
-    print(f"Coordinates marked {SHIP} represent a ship")
+    print("You must take command of the fleet and destroy them before they \
+destroy the rebel alliance!")
+    print("Targeting scanners are at minimal operating efficiency so \
+please note:")
+    print(f"\nCoordinates marked {EMPTY} have not been guessed")
+    print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
 
@@ -139,18 +152,18 @@ class Board:
         Allows user to place ships on board.
         """
         print("Please select horizontal\u2192 or vertical\u2193 orientation")
-        print("Ship coordinates must not overlap")
+        print("Commander, make sure the ships do not collide!")
         if ship_size == 4:
             print(" ")
-            print("We have stolen an imperial Star Destroyer(3), let's deploy it now!\n")
+            print("We've stolen an Imperial Star Destroyer(4), let's deploy it now!\n")
         elif ship_size == 3:
             print(" ")
-            print("Let's deploy a CR90 Corvette(3)\n")
+            print("Let's deploy our CR90 Corvette(3)\n")
         elif ship_size == 2:
             print(" ")
-            print("Let's deploy the Millennium Falcon(2)\n")
+            print("The Millennium Falcon(2) has been repaired, let's place it\n")
         elif ship_size == 1:
-            print("We have an X-wing, let's place that too!")
+            print("We have an X-wing(1) ready to go, let's place that too!")
 
     def player_ship_placement(self):
         """
@@ -165,27 +178,27 @@ class Board:
                 else:
                     raise ValueError
             except ValueError:
-                print("Invalid coordinates, please try again")
+                print("R2D2: Beep...Invalid coordinates, please try again...boop")
         while True:
             try:
-                column = input("Please select a column A-F: \n").upper()
+                column = input("Commander, please select a column A-F: \n").upper()
                 if not re.match("^[A-F]*$", column):
-                    print("Beep...does not compute...please enter a letter A-F...")
+                    print("C3PO: Sir! Please enter a letter A-F...")
                 else:
                     column = self.col_letters_as_numbers[column]
                     break
             except KeyError:
-                print("Please enter a letter A-F")
+                print("C3PO: Sir! Please enter a letter A-F")
         while True:
             try:
-                row = input("Please select a row 0-5:  \n")
+                row = input("Commander, please select a row 0-5:  \n")
                 if row in self.valid_row_input:
                     row = int(row)
                     break
                 else:
                     raise ValueError
             except ValueError:
-                print("Please enter a valid number 0-5")
+                print("R2D2: Beep...Please enter a valid number 0-5...boop")
         return orientation, column, row
 
     def populate_boards(self):
@@ -404,7 +417,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 computer_guess.attack_list.append(0)
                 time.sleep(1)
                 if player_lives == 0:
-                    print("Sir, our shields are depleted, we have lost!")
+                    print("C3PO: Sir, our shields are depleted, we're doomed!")
                     print(" ")
                     print(END_OF_ROUND)
                     break
@@ -420,8 +433,10 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
 
 def play_again():
     """
-    Gives the user a choice of quitting,
-    or playing another game.
+    Upon finishing the game,
+    The player is offered the choice
+    of playing another game or 
+    quitting.
     """
     print("\nWould you like to play again?")
     player_response = input("Please enter Y or N: \n").upper()
@@ -444,7 +459,11 @@ def play_again():
 
 def new_game():
     """
-    revrrev
+    Function to start new game.
+    Shows start screen,
+    Prompts player for their name.
+    Creates four instances of board class.
+    Populates boards
     """
     start_screen()
     player_name = get_name()
@@ -461,5 +480,5 @@ def new_game():
     play_game(player_board, player_guess, computer_board, computer_guess)
     play_again()
 
-
+# Call new game function to begin game
 new_game()
