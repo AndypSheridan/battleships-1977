@@ -282,5 +282,28 @@ class Board:
                     column = input("Please select a column A-F: \n").upper()
                     if not re.match("^[A-F]*$", column):
                         print("Beep...does not compute...please enter a letter A-F...")
-
+                    else:
+                        column = self.col_letters_as_numbers[column]
+                        break
+                except KeyError:
+                    print("Please enter a letter...")
+            elif self.user == "computer guess":
+                column = self.comp_attack_column()
+                if column == range(0, 6):
+                    break
+                else:
+                    column = random.randint(0, 5)
+                    break
         return row, column
+
+    def lives_counter(self):
+        """
+        ohkjj
+        """
+        counter = 8
+        for row in self.board:
+            for column in row:
+                if column == HIT:
+                    counter -= 1
+                    self.lives = counter
+        return self.lives
