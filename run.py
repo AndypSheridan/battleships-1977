@@ -9,7 +9,7 @@ EMPTY = "-"
 SHIP = "@"
 HIT = "X"
 ALREADY_GUESSED = "0"
-END_OF_ROUND = "*" * 50
+END_OF_ROUND = "*" * 80
 
 
 def start_screen():
