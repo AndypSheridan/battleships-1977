@@ -55,30 +55,20 @@ please note:")
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
 
 
-def get_name():
-    """
-    Prompts the user to enter their name.
-    Stores the name for use in the game.
-    """
-    player_name = input("\nGreetings commander, please enter your name...")
-    return player_name
-
-
 class Board:
     """
     Class to create player and computer boards, 
     plus guess boards for each.
     Only player and player guess boards will be displayed.
-    
     """
     def __init__(self, name, user):
         self.board = [[EMPTY] * 6 for i in range(6)]
-        self.lives = 8
+        self.cpu_attacks = [1, 1, 1, 1]
         self.name = name
         self.user = user
-        self.column_list = [6]
-        self.row_list = [6]
-        self.attack_list = [1, 1, 1, 1]
+        self.columns = [6]
+        self.rows = [6]
+        self.lives = 8
 
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
@@ -152,7 +142,7 @@ class Board:
         """
         Allows user to place ships on board.
         """
-        print("Please select horizontal\u2192 or vertical\u2193 orientation")
+        print("Please select horizontal \u2192 or vertical \u2193 orientation")
         print("Commander, make sure the ships do not collide!")
         if ship_size == 4:
             print(" ")
@@ -252,7 +242,7 @@ class Board:
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
-        column_hit = self.column_list[-1]
+        column_hit = self.columns[-1]
         if column_hit == 6:
             column = random.randint(0, 5)
             return column
@@ -271,7 +261,7 @@ class Board:
         Returns a value for the column based
         off last hit ship on comp_guess board.
         """
-        row_hit = self.row_list[-1]
+        row_hit = self.rows[-1]
         if row_hit == 6:
             row = random.randint(0, 6)
             return row
@@ -296,7 +286,7 @@ class Board:
                 try:
                     column = input("Please select a column A-F: \n").upper()
                     if not re.match("^[A-F]*$", column):
-                        print("Sir, those coordinates are out of range...please enter a number 0-5")
+                        print("Sir, those coordinates are out of range...please enter a number 0-5: ")
                     else:
                         column = self.col_letters_as_numbers[column]
                         break
@@ -312,7 +302,7 @@ class Board:
         while True:
             if self.user == "player":
                 try:
-                    row = input("Please select a row 0-5")
+                    row = input("Please select a row 0-5: \n")
                     if row in self.valid_row_input:
                         row = int(row)
                         break
@@ -334,14 +324,14 @@ class Board:
         Tracks last four AI attacks. If 4, 
         forces random column and row.
         """
-        one = self.attack_list[-1]
-        two = self.attack_list[-2]
-        three = self.attack_list[-3]
-        four = self.attack_list[-4]
+        one = self.cpu_attacks[-1]
+        two = self.cpu_attacks[-2]
+        three = self.cpu_attacks[-3]
+        four = self.cpu_attacks[-4]
         sum_of_attack = one + two + three + four
         if sum_of_attack == 8:
-            self.column_list.append(6)
-            self.row_list.append(6)
+            self.columns.append(6)
+            self.rows.append(6)
         else:
             pass
 
@@ -356,6 +346,16 @@ class Board:
                     counter -= 1
                     self.lives = counter
         return self.lives
+
+
+def get_name():
+    """
+    Prompts the user to enter their name.
+    Stores the name for use in the game.
+    """
+    player_name = input("\nGreetings commander, please enter your name...")
+    return player_name
+
 
 def play_game(player_board, player_guess, computer_board, computer_guess):
     """
@@ -409,13 +409,13 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 print("Sir, the enemy have hit one of our ships!\n")
                 computer_turn += 1
                 player_lives -= 1
-                computer_guess.column_list.append(column)
-                computer_guess.row_list.append(row)
+                computer_guess.columns.append(column)
+                computer_guess.rows.append(row)
                 computer_guess.board[row][column] = HIT
                 player_board.board[row][column] = HIT
                 player_board.lives_counter()
                 player_board.display_board()
-                computer_guess.attack_list.append(0)
+                computer_guess.cpu_attacks.append(0)
                 time.sleep(1)
                 if player_lives == 0:
                     print("C3PO: Sir, our shields are depleted, we're doomed!")
@@ -427,7 +427,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 computer_guess.board[row][column] = ALREADY_GUESSED
                 computer_turn += 1
                 player_board.display_board()
-                computer_guess.attack_list.append(1)
+                computer_guess.cpu_attacks.append(1)
                 computer_guess.count_misses()
                 time.sleep(2)
 
@@ -468,6 +468,8 @@ def new_game():
     """
     start_screen()
     player_name = get_name()
+    print(f"Welcome, Commander {player_name}, may the force be with us!")
+    print("Now, we must deploy our fleet, we have four ships...")
     player_board = Board(player_name, "player")
     player_guess = Board("Space Radar", "player guess")
     computer_board = Board("ENEMY", "computer")
