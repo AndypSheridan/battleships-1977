@@ -276,4 +276,11 @@ class Board:
                 else:
                     row = random.randint(0, 5)
                     break
+        while True:
+            if self.user == "player":
+                try:
+                    column = input("Please select a column A-F: \n").upper()
+                    if not re.match("^[A-F]*$", column):
+                        print("Beep...does not compute...please enter a letter A-F...")
+
         return row, column
