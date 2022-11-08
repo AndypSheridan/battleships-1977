@@ -205,6 +205,16 @@ class Board:
                                 self.display_board()
                                 break
 
+    def random_number(self):
+        """
+        Returns a random int between 1 and 2.
+        Int used to decide computer attack.
+        """
+        attack_random = random.randint(1, 2)
+        return attack_random
+
+    
+
 
 
 
