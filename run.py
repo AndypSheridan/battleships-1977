@@ -43,4 +43,13 @@ class Board:
     """
     def __init__(self, name, user):
         self.board = [[EMPTY] * 6 for i in range (6)]
+        self.lives = 8
+        self.name = name
+        self.user = user
+        self.row_arr = [6]
+        self.column_arr = [6]
+        self.attack_arr = [1, 1, 1, 1]
+
+    
+
 
