@@ -213,7 +213,24 @@ class Board:
         attack_random = random.randint(1, 2)
         return attack_random
 
-    
+    def comp_attack_row(self):
+        """
+        Holds the logic for computers attack.
+        Returns a value for the row based
+        off last hit ship on comp_guess board.
+        """
+        row_hit = self.row_arry[-1]
+        if row_hit == 6:
+            row = random.randint(0, 6)
+            return row
+        else:
+            attk_random = self.random_attk_int()
+            if attk_random == 1:
+                row = row_hit + 1
+                return row
+            elif attk_random == 2:
+                row = row_hit - 1
+                return row
 
 
 
