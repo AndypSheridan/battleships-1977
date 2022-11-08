@@ -19,38 +19,27 @@ def start_screen():
     See credits for ASCII art.
     """
     print("""\
-
-.______        ___   .___________.___________. __       _______ 
-|   _  \      /   \  |           |           ||  |     |   ____|
-|  |_)  |    /  ^  \ `---|  |----`---|  |----`|  |     |  |__   
-|   _  <    /  /_\  \    |  |        |  |     |  |     |   __|  
-|  |_)  |  /  _____  \   |  |        |  |     |  `----.|  |____ 
-|______/  /__/     \__\  |__|        |__|     |_______||_______|
-                                                                
-     _______. __    __   __  .______     _______.               
-    /       ||  |  |  | |  | |   _  \   /       |               
-   |   (----`|  |__|  | |  | |  |_)  | |   (----`               
-    \   \    |   __   | |  | |   ___/   \   \                   
-.----)   |   |  |  |  | |  | |  |   .----)   |                  
-|_______/    |__|  |__| |__| | _|   |_______/                   
-                                                                
- __    ___    ______   ______                                   
-/_ |  / _ \  |____  | |____  |                                  
- | | | (_) |     / /      / /                                   
- | |  \__, |    / /      / /                                    
- | |    / /    / /      / /                                     
- |_|   /_/    /_/      /_/                                      
-                                                                
-                                                                                
-                                                                                                                
+__________         __    __  .__                                       
+\______   \_____ _/  |__/  |_|  |   ____                               
+ |    |  _/\__  \\   __\   __\  | _/ __ \    ______   ______           
+ |    |   \ / __ \|  |  |  | |  |_\  ___/   /_____/  /_____/           
+ |______  /(____  /__|  |__| |____/\___  >                             
+        \/      \/                     \/                              
+  _________.__    .__                  ____ __________________________ 
+ /   _____/|  |__ |__|_____  ______   /_   /   __   \______  \______  \
+ \_____  \ |  |  \|  \____ \/  ___/    |   \____    /   /    /   /    /
+ /        \|   Y  \  |  |_> >___ \     |   |  /    /   /    /   /    / 
+/_______  /|___|  /__|   __/____  >    |___| /____/   /____/   /____/  
+        \/      \/   |__|       \/                                     
+                                                                      
 """)
-    print("\nA hostile Imperial fleet has jumped from Hyperspace and is\
-         poised for attack!")
+    print("\nA hostile Imperial fleet has jumped from Hyperspace and is \
+preparing to attack!")
     print("You have 10 attempts to destroy the enemy!")
-    print(f"Tiles marked {EMPTY} have not been guessed")
-    print(f"Tiles marked {SHIP} represent a ship")
-    print(f"Tiles marked {HIT} show a hit or destroyed enemy")
-    print(f"Tiles marked {ALREADY_GUESSED} have already been guessed\n")
+    print(f"Coordinates marked {EMPTY} have not been guessed")
+    print(f"Coordinates marked {SHIP} represent a ship")
+    print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
+    print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
 
 
 def get_name():
