@@ -15,7 +15,7 @@ import re
 END_OF_ROUND = "*" * 80
 ALREADY_GUESSED = "0"
 EMPTY = "-"
-SHIP = "@"
+SHIP = "§"
 HIT = "X"
 
 
@@ -49,7 +49,7 @@ preparing to attack!")
 destroy the rebel alliance!")
     print("Targeting scanners are at minimal operating efficiency so \
 please note:")
-    print(f"\nCoordinates marked {EMPTY} have not been guessed")
+    print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
@@ -69,6 +69,7 @@ class Board:
     Class to create player and computer boards, 
     plus guess boards for each.
     Only player and player guess boards will be displayed.
+    
     """
     def __init__(self, name, user):
         self.board = [[EMPTY] * 6 for i in range(6)]
