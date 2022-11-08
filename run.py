@@ -326,9 +326,30 @@ class Board:
 
     def play_game(player_board, player_guess, computer_board, computer_guess):
         """
-        
+        giugiui
         """
         player_turn = 0
-        computer_turn =1
+        computer_turn = 1
         player_lives = 8
         computer_lives = 8
+        while True:
+            if player_turn < computer_turn:
+                player_guess.display_board()
+                row, column = player_board.player_attack()
+                if player_guess.board[row][column] == ALREADY_GUESSED:
+                    print("Sir, we have already fired on these coordinates!\n")
+                elif player_guess.board[row][column] == HIT:
+                    print("Sir, we have already hit a ship at these coordinates!\n")
+                elif computer_board.board[row][column] == SHIP:
+                    print(" ")
+                    print(END_OF_ROUND)
+                    print("Great shot Sir, we hit a ship!\n")
+                    player_guess.board[row][column] = HIT
+                    player_turn += 1
+                    player_guess.lives_counter()
+                    player_guess.display_board()
+                    computer_lives -= 1
+                    print("Brace yourself Sir, the enemy are attacking...")
+                    time.sleep(2)
+
+
