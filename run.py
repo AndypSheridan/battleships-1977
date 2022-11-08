@@ -140,7 +140,34 @@ class Board:
         """
         while True:
             try:
-                orientation = input("Select Ship Orientation (H or V): \n")
+                orientation = input("Select Ship Orientation (H or V): \n").upper()
+                if orientation == "H" or orientation == "V":
+                    break
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Invalid coordinates, please try again")
+        while True:
+            try:
+                row = input("Please select a row 0-5: \n")
+                if row in self.valid_row_input:
+                    row = int(row)
+                    break
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Please enter a valid number between 0-5")
+        while True:
+            try:
+                column = input("Please select a column A-F: \n").upper()
+                if not re.match("^[A-F]*$", column):
+                    print("Beep...does not compute...please enter a letter A-F...")
+                else:
+                    column = self.col_letters_as_numbers[column]
+                    break
+            except KeyError:
+                print("Please enter a letter A-F")
+        return orientation, row, column
 
 
 
