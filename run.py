@@ -5,7 +5,6 @@ random used for random choice and number,
 time to simulate computer though process,
 re to allow checking if a regular expression matches a string
 """
-from colorama import Fore
 import random
 import time
 import re
@@ -43,7 +42,7 @@ def start_screen():
 
                                                                       
 """)
-    print(Fore.CYAN + "A hostile Imperial fleet has jumped from Hyperspace and is \
+    print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
     print("You must take command of the fleet and destroy them before they \
 destroy the rebel alliance!")
