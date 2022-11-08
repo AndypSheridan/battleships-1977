@@ -324,4 +324,11 @@ class Board:
                     self.lives = counter
         return self.lives
 
-    
+    def play_game(player_board, player_guess, computer_board, computer_guess):
+        """
+        
+        """
+        player_turn = 0
+        computer_turn =1
+        player_lives = 8
+        computer_lives = 8
