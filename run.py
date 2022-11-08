@@ -42,7 +42,7 @@ class Board:
     Only player and player guess boards will be displayed.
     """
     def __init__(self, name, user):
-        self.board = [[EMPTY] * 6 for i in range (6)]
+        self.board = [[EMPTY] * 6 for i in range(6)]
         self.lives = 8
         self.name = name
         self.user = user
@@ -50,6 +50,9 @@ class Board:
         self.column_arr = [6]
         self.attack_arr = [1, 1, 1, 1]
 
-    
+    col_letters_as_numbers = {
+        "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
+    }
 
+    valid_row_input
 
