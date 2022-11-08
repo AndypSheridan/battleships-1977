@@ -58,3 +58,15 @@ class Board:
         "0", "1", "2", "3", "4", "5"
     }
 
+    def display_board(self):
+        """
+        Prints boards to the terminal.
+        """
+        print(f"Board: {self.name}\n")
+        print("  A B C D E F ")
+        print("  +-+-+-+-+-+")
+        row_number = 0
+        for row in self.board:
+            print('%d|%s ' % (row_number, ' '.join(row)))
+            row_number += 1
+        print(f"\nLives left: {self.lives}\n")
