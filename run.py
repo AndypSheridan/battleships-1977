@@ -21,9 +21,9 @@ HIT = "X"
 
 def start_screen():
     """
-    Displays a welcome message to the user,
+    Displays ASCII art on programme load
     each time the game begins.
-    Displays the rules and the legend.
+    Displays a brief story and the legend.
     See credits for ASCII art.
     """
     print("""\
