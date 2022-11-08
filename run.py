@@ -89,11 +89,11 @@ class Board:
         Prints boards to the terminal.
         """
         print(f"Board: {self.name}\n")
-        print("  A B C D E F ")
-        print("  +-+-+-+-+-+")
+        print("   A  B  C  D  E  F ")
+        print("  -+--+--+--+--+--+")
         row_number = 0
         for row in self.board:
-            print('%d|%s ' % (row_number, ' '.join(row)))
+            print('%d| %s ' % (row_number, '  '.join(row)))
             row_number += 1
         print(f"\nLives left: {self.lives}\n")
 
@@ -124,8 +124,8 @@ class Board:
         Method to ensure ships do not overlap when placed.
         If coordinates overlap, prompts user to try again.
         """
-        if orientation == "V":
-            for i in range(row, row + ship_size):
+        if orientation == "H":
+            for i in range(column, column + ship_size):
                 if board[column][i] == SHIP:
                     if self.user == "player":
                         print("\We've already placed a ship here, sir...")
@@ -137,7 +137,7 @@ class Board:
             for i in range(column, column + ship_size):
                 if board[i][row] == SHIP:
                     if self.user == "player":
-                        print("\We've already placed a ship here, sir...")
+                        print("We've already placed a ship here, sir...")
                         print("Let's try that again!\n")
                         return True
                     else:
@@ -148,7 +148,7 @@ class Board:
         """
         Allows user to place ships on board.
         """
-        print("Please select horizontal or vertical orientation")
+        print("Please select horizontal\u2192 or vertical\u2193 orientation")
         print("Ship coordinates must not overlap")
         if ship_size == 3:
             print(" ")
@@ -209,11 +209,11 @@ class Board:
                     if self.place_ships(ship_size, row, column, orientation):
                         if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
                             if orientation == "V":
-                                for i in range(row, row + ship_size):
-                                    self.board[i][column] = SHIP
-                            else:
                                 for i in range(column, column + ship_size):
-                                    self.board[row][i] = SHIP
+                                    self.board[i][row] = SHIP
+                            else:
+                                for i in range(row, row + ship_size):
+                                    self.board[column][i] = SHIP
                             break
                 else:
                     if self.user == "player":
@@ -222,11 +222,11 @@ class Board:
                         if self.place_ships(ship_size, row, column, orientation):
                             if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
                                 if orientation == "V":
-                                    for i in range(row, row + ship_size):
-                                        self.board[i][column] = SHIP
-                                else:
                                     for i in range(column, column + ship_size):
-                                        self.board[row][i] = SHIP
+                                        self.board[i][row] = SHIP
+                                else:
+                                    for i in range(row, row + ship_size):
+                                        self.board[column][i] = SHIP
                                 print(" ")
                                 self.display_board()
                                 break
@@ -247,7 +247,7 @@ class Board:
         """
         row_hit = self.row_list[-1]
         if row_hit == 6:
-            row = random.randint(0, 6)
+            row = random.randint(0, 5)
             return row
         else:
             attack_random = self.random_number()
@@ -406,7 +406,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 computer_guess.row_list.append(row)
                 computer_guess.board[row][column] = HIT
                 player_board.board[row][column] = HIT
-                player_board.board.lives_counter()
+                player_board.lives_counter()
                 player_board.display_board()
                 computer_guess.attack_list.append(0)
                 time.sleep(2)
@@ -456,7 +456,7 @@ def new_game():
     start_screen()
     player_name = get_name()
     player_board = Board(player_name, "player")
-    player_guess = Board("Radar", "player guess")
+    player_guess = Board("Space Radar", "player guess")
     computer_board = Board("ENEMY", "computer")
     computer_guess = Board("ENEMY GUESS", "computer guess")
     computer_board.populate_boards()
