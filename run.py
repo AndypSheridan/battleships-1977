@@ -4,7 +4,6 @@ import re
 
 
 # Global variables used in game boards
-
 EMPTY = "-"
 SHIP = "@"
 HIT = "X"
@@ -17,6 +16,7 @@ def start_screen():
     Displays a welcome message to the user,
     each time the game begins.
     Displays the rules and the legend.
+    See credits for ASCII art.
     """
     print("""\
 
@@ -44,7 +44,8 @@ def start_screen():
                                                                                 
                                                                                                                 
 """)
-    print("\nWelcome to Battleships 1977")
+    print("\nA hostile Imperial fleet has jumped from Hyperspace and is\
+         poised for attack!")
     print("You have 10 attempts to destroy the enemy!")
     print(f"Tiles marked {EMPTY} have not been guessed")
     print(f"Tiles marked {SHIP} represent a ship")
@@ -57,7 +58,7 @@ def get_name():
     Prompts the user to enter their name.
     Stores the name for use in the game.
     """
-    player_name = input("\nPlease enter your name...")
+    player_name = input("\nGreetings commander, please enter your name...")
     return player_name
 
 
@@ -394,7 +395,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 player_turn += 1
                 player_guess.display_board()
                 print("Brace yourself Sir, the enemy are attacking...")
-                time.sleep(2)
+                time.sleep(1)
         if computer_turn == player_turn:
             row, column = computer_guess.player_attack()
             if computer_guess.board[row][column] == ALREADY_GUESSED:
@@ -412,9 +413,9 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 player_board.lives_counter()
                 player_board.display_board()
                 computer_guess.attack_list.append(0)
-                time.sleep(2)
+                time.sleep(1)
                 if player_lives == 0:
-                    print("Sir, our shileds are depleted, we have lost!")
+                    print("Sir, our shields are depleted, we have lost!")
                     print(" ")
                     print(END_OF_ROUND)
                     break
