@@ -68,7 +68,7 @@ class Board:
         self.user = user
         self.columns = [6]
         self.rows = [6]
-        self.lives = 8
+        self.shields = 8
 
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
@@ -89,7 +89,7 @@ class Board:
         for row in self.board:
             print('%d|%s' % (row_number, ' '.join(row)))
             row_number += 1
-        print(f"\nLives left: {self.lives}\n")
+        print(f"\nShield strength: {self.shields}\n")
 
     def place_ships(self, ship_size, row, column, orientation):
         """
@@ -335,7 +335,7 @@ class Board:
         else:
             pass
 
-    def lives_counter(self):
+    def shields_counter(self):
         """
         ohkjj
         """
@@ -344,8 +344,8 @@ class Board:
             for column in row:
                 if column == HIT:
                     counter -= 1
-                    self.lives = counter
-        return self.lives
+                    self.shields = counter
+        return self.shields
 
 
 def get_name():
@@ -363,8 +363,8 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
     """
     player_turn = 0
     computer_turn = 1
-    player_lives = 8
-    computer_lives = 8
+    player_shields = 8
+    computer_shields = 8
     while True:
         if player_turn < computer_turn:
             player_guess.display_board()
@@ -379,12 +379,12 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 print("Great shot Sir, we hit a ship!\n")
                 player_guess.board[row][column] = HIT
                 player_turn += 1
-                player_guess.lives_counter()
+                player_guess.shields_counter()
                 player_guess.display_board()
-                computer_lives -= 1
+                computer_shields -= 1
                 print("Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1)
-                if computer_lives == 0:
+                if computer_shields == 0:
                     print("Sir, enemy shields are depleted, they're retreating!")
                     print("We have won!!")
                     print(" ")
@@ -408,16 +408,16 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
             elif player_board.board[row][column] == SHIP:
                 print("Sir, the enemy have hit one of our ships!\n")
                 computer_turn += 1
-                player_lives -= 1
+                playeer_shields -= 1
                 computer_guess.columns.append(column)
                 computer_guess.rows.append(row)
                 computer_guess.board[row][column] = HIT
                 player_board.board[row][column] = HIT
-                player_board.lives_counter()
+                player_board.shields_counter()
                 player_board.display_board()
                 computer_guess.cpu_attacks.append(0)
                 time.sleep(1)
-                if player_lives == 0:
+                if player_shields == 0:
                     print("C3PO: Sir, our shields are depleted, we're doomed!")
                     print(" ")
                     print(END_OF_ROUND)
