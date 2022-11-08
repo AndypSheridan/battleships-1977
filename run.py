@@ -421,3 +421,13 @@ def play_again():
             print(" ")
             print("Please enter Y or N")
             player_response = input("Enter Y or N: \n").upper()
+
+
+def new_game():
+    """
+    revrrev
+    """
+    start_screen()
+    player_name = get_name()
+    player_board = Board(player_name, "player")
+    player_guess = Board(name, user)
