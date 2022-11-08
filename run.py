@@ -133,7 +133,15 @@ class Board:
         elif ship_size == 1:
             print("We have an X-wing, let's place that too!")
 
-    def 
+    def player_ship_placement(self):
+        """
+        Asks the user for their preferred orientation,
+        row and column. Places ships on the board.
+        """
+        while True:
+            try:
+                orientation = input("Select Ship Orientation (H or V): \n")
+
 
 
 
