@@ -195,6 +195,16 @@ class Board:
                         orientation, row, column = self.player_ship_placement()
                         if self.place_ships(ship_size, row, column, orientation):
                             if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
-                                
+                                if orientation == "H":
+                                    for i in range(row, row + ship_size):
+                                        self.board[i][column] = SHIP
+                                else:
+                                    for i in range(column, column + ship_size):
+                                        self.board[row][i] = SHIP
+                                print(" ")
+                                self.display_board()
+                                break
+
+
 
 
