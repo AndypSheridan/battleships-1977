@@ -308,22 +308,22 @@ class Board:
         while True:
             if self.user == "player":
                 try:
-                    column = input("Please select a column A-F: \n").upper()
-                    if not re.match("^[A-F]*$", column):
-                        print("Beep...does not compute...please enter a letter A-F...")
-                    else:
-                        column = self.col_letters_as_numbers[column]
+                    row = input("Please select a row 0-5")
+                    if row in self.valid_row_input:
+                        row = int(row)
                         break
-                except KeyError:
-                    print("Please enter a letter...")
+                    else:
+                        raise ValueError
+                except ValueError:
+                    print("Please Enter a number 0-5")
             elif self.user == "computer guess":
-                column = self.comp_attack_column()
-                if column == range(0, 6):
+                row = self.comp_attack_row()
+                if row == range(0, 6):
                     break
                 else:
-                    column = random.randint(0, 5)
+                    row = random.randint(0, 5)
                     break
-        return row, column
+        return column, row
 
     def count_misses(self):
         """
@@ -364,7 +364,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
     while True:
         if player_turn < computer_turn:
             player_guess.display_board()
-            row, column = player_board.player_attack()
+            column, row = player_board.player_attack()
             if player_guess.board[row][column] == ALREADY_GUESSED:
                 print("Sir, we have already fired on these coordinates!\n")
             elif player_guess.board[row][column] == HIT:
@@ -379,7 +379,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 player_guess.display_board()
                 computer_lives -= 1
                 print("Brace yourself Sir, the enemy are attacking...")
-                time.sleep(2)
+                time.sleep(1)
                 if computer_lives == 0:
                     print("Sir, enemy shields are depleted, they're retreating!")
                     print("We have won!!")
@@ -389,7 +389,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
             else:
                 print(" ")
                 print(END_OF_ROUND)
-                print("\Missiles have missed, Sir!\n")
+                print("\nMissiles have missed, Sir!\n")
                 player_guess.board[row][column] = ALREADY_GUESSED
                 player_turn += 1
                 player_guess.display_board()
