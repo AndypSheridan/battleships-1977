@@ -399,3 +399,11 @@ class Board:
                     time.sleep(2)
 
 
+def play_again():
+    """
+    Gives the user a choice of quitting,
+    or playing another game.
+    """
+    print("\nWould you like to play again?")
+    player_response = input("Please enter Y or N: \n").upper()
+    print(" ")
