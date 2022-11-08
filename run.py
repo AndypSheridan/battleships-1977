@@ -437,5 +437,10 @@ def new_game():
     player_board.display_board()
     player_board.populate_boards()
     time.sleep(1)
-    PRINT(END_OF_ROUND)
-    PRINT(" ")
+    print(END_OF_ROUND)
+    print(" ")
+    play_game(player_board, player_guess, computer_board, computer_guess)
+    play_again()
+
+
+new_game()
