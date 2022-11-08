@@ -98,7 +98,7 @@ class Board:
         Method to ensure ships do not overlap when placed.
         If coordinates overlap, prompts user to try again.
         """
-        if orientation == "H":
+        if orientation == "V":
             for i in range(row, row + ship_size):
                 if board[column][i] == SHIP:
                     if self.user == "player":
