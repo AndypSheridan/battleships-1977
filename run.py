@@ -46,9 +46,9 @@ class Board:
         self.lives = 8
         self.name = name
         self.user = user
-        self.row_arr = [6]
-        self.column_arr = [6]
-        self.attack_arr = [1, 1, 1, 1]
+        self.row_list = [6]
+        self.column_list = [6]
+        self.attack_list = [1, 1, 1, 1]
 
     col_letters_as_numbers = {
         "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
@@ -70,3 +70,53 @@ class Board:
             print('%d|%s ' % (row_number, ' '.join(row)))
             row_number += 1
         print(f"\nLives left: {self.lives}\n")
+
+    def place_ships(self, ship_length, row, column, orientation):
+        """
+        """
+        if orientation == "H":
+            if row + ship_length > 6:
+                if self.user == "player":
+                    print("Sir, that is out of range, try again!\n")
+                    return False
+                else:
+                    return False
+            else:
+                return True
+        else:
+            if column + ship_length > 6:
+                if self.user == "player":
+                    print("Sir, that is out of range, try again!\n")
+                    return False
+                else:
+                    return False
+            else:
+                return True
+
+    def check_ship_placement(self, board, row, column, orientation, ship_length):
+        """
+        Function to ensure ships do not overlap when placed.
+        If coordinates overlap, prompts user to try again.
+        """
+        if orientation == "H":
+            for i in range(row, row + ship_length):
+                if board[column][i] == SHIP:
+                    if self.user == "player":
+                        print("\We've already placed a ship here, sir...")
+                        print("Let's try that again!\n")
+                        return True
+                    else:
+                        return True
+        else:
+            for i in range(column, column + ship_length):
+                if board[i][row] == SHIP:
+                    if self.user == "player":
+                        print("\We've already placed a ship here, sir...")
+                        print("Let's try that again!\n")
+                        return True
+                    else:
+                        return True
+        return False
+
+
+
