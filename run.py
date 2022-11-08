@@ -357,5 +357,25 @@ class Board:
                         print(" ")
                         print(END_OF_ROUND)
                         break
+                else:
+                    print(" ")
+                    print(END_OF_ROUND)
+                    print("\Missiles have missed, Sir!\n")
+                    player_guess.board[row][column] = ALREADY_GUESSED
+                    player_turn += 1
+                    player_guess.display_board()
+                    print("Brace yourself Sir, the enemy are attacking...")
+                    time.sleep(2)
+        if computer_turn == player_turn:
+            row, column = computer_guess.player_attack()
+            if computer_guess.board[row][column] == ALREADY_GUESSED:
+                pass
+            elif computer_guess.board[row][column] == HIT:
+                pass
+            elif player_board.board[row][column] == SHIP:
+                print("Sir, the enemy have hit one of our ships!\n")
+                computer_turn += 1
+                player_lives -= 1
+                computer_guess.column_list.append(column)
 
 
