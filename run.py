@@ -215,7 +215,7 @@ class Board:
 
     def comp_attack_row(self):
         """
-        Holds the logic for computers attack.
+        Holds logic for computers attack.
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
@@ -250,6 +250,14 @@ class Board:
             elif attack_random == 2:
                 column = column_hit - 1
                 return column
+
+    def player_attack(self):
+        """
+        Prompts player to input attack coordinates.
+        Uses comp AI methods to decide computer attack coordinates.
+        Returns cooordinates to be used in the game.
+        """
+        
 
 
 
