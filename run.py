@@ -169,7 +169,7 @@ class Board:
                 else:
                     raise ValueError
             except ValueError:
-                print("R2D2: Beep...Invalid coordinates, please try again...boop")
+                print("R2D2: Beep...Invalid input, please try again...boop")
         while True:
             try:
                 column = input("Commander, please select a column A-F: \n").upper()
@@ -408,7 +408,7 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
             elif player_board.board[row][column] == SHIP:
                 print("Sir, the enemy have hit one of our ships!\n")
                 computer_turn += 1
-                playeer_shields -= 1
+                player_shields -= 1
                 computer_guess.columns.append(column)
                 computer_guess.rows.append(row)
                 computer_guess.board[row][column] = HIT
