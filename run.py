@@ -72,8 +72,8 @@ class Board:
         self.lives = 8
         self.name = name
         self.user = user
-        self.row_list = [6]
         self.column_list = [6]
+        self.row_list = [6]
         self.attack_list = [1, 1, 1, 1]
 
     valid_row_input = {
@@ -89,11 +89,11 @@ class Board:
         Prints boards to the terminal.
         """
         print(f"Board: {self.name}\n")
-        print("   A  B  C  D  E  F ")
-        print("  -+--+--+--+--+--+")
+        print("  A B C D E F ")
+        print("  +-+-+-+-+-+")
         row_number = 0
         for row in self.board:
-            print('%d| %s ' % (row_number, '  '.join(row)))
+            print('%d|%s' % (row_number, ' '.join(row)))
             row_number += 1
         print(f"\nLives left: {self.lives}\n")
 
@@ -101,7 +101,7 @@ class Board:
         """
         """
         if orientation == "H":
-            if row + ship_size > 6:
+            if column + ship_size > 6:
                 if self.user == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
@@ -110,7 +110,7 @@ class Board:
             else:
                 return True
         else:
-            if column + ship_size > 6:
+            if row + ship_size > 6:
                 if self.user == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
@@ -126,18 +126,18 @@ class Board:
         """
         if orientation == "H":
             for i in range(column, column + ship_size):
-                if board[column][i] == SHIP:
+                if board[row][i] == SHIP:
                     if self.user == "player":
-                        print("\We've already placed a ship here, sir...")
+                        print("\nWe've already placed a ship here, sir...")
                         print("Let's try that again!\n")
                         return True
                     else:
                         return True
         else:
-            for i in range(column, column + ship_size):
-                if board[i][row] == SHIP:
+            for i in range(row, row + ship_size):
+                if board[i][column] == SHIP:
                     if self.user == "player":
-                        print("We've already placed a ship here, sir...")
+                        print("\nWe've already placed a ship here, sir...")
                         print("Let's try that again!\n")
                         return True
                     else:
@@ -150,12 +150,15 @@ class Board:
         """
         print("Please select horizontal\u2192 or vertical\u2193 orientation")
         print("Ship coordinates must not overlap")
-        if ship_size == 3:
+        if ship_size == 4:
             print(" ")
             print("We have stolen an imperial Star Destroyer(3), let's deploy it now!\n")
+        elif ship_size == 3:
+            print(" ")
+            print("Let's deploy a CR90 Corvette(3)\n")
         elif ship_size == 2:
             print(" ")
-            print("Let's deploy a CR90 Corvette(2)\n")
+            print("Let's deploy the Millennium Falcon(2)\n")
         elif ship_size == 1:
             print("We have an X-wing, let's place that too!")
 
@@ -175,16 +178,6 @@ class Board:
                 print("Invalid coordinates, please try again")
         while True:
             try:
-                row = input("Please select a row 0-5: \n")
-                if row in self.valid_row_input:
-                    row = int(row)
-                    break
-                else:
-                    raise ValueError
-            except ValueError:
-                print("Please enter a valid number between 0-5")
-        while True:
-            try:
                 column = input("Please select a column A-F: \n").upper()
                 if not re.match("^[A-F]*$", column):
                     print("Beep...does not compute...please enter a letter A-F...")
@@ -193,40 +186,50 @@ class Board:
                     break
             except KeyError:
                 print("Please enter a letter A-F")
-        return orientation, row, column
+        while True:
+            try:
+                row = input("Please select a row 0-5:  \n")
+                if row in self.valid_row_input:
+                    row = int(row)
+                    break
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Please enter a valid number 0-5")
+        return orientation, column, row
 
     def populate_boards(self):
         """
         Populates boards
         """
-        size_of_ships = [3, 2, 2, 1]
+        size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
             while True:
                 if self.user == "computer":
                     orientation = random.choice(["H", "V"])
-                    row = random.randint(0, 3)
-                    column = random.randint(0, 3)
+                    row = random.randint(0, 5)
+                    column = random.randint(0, 5)
                     if self.place_ships(ship_size, row, column, orientation):
                         if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
-                            if orientation == "V":
+                            if orientation == "H":
                                 for i in range(column, column + ship_size):
-                                    self.board[i][row] = SHIP
+                                    self.board[row][i] = SHIP
                             else:
                                 for i in range(row, row + ship_size):
-                                    self.board[column][i] = SHIP
+                                    self.board[i][column] = SHIP
                             break
                 else:
                     if self.user == "player":
                         self.ship_type(ship_size)
-                        orientation, row, column = self.player_ship_placement()
+                        orientation, column, row = self.player_ship_placement()
                         if self.place_ships(ship_size, row, column, orientation):
                             if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
-                                if orientation == "V":
+                                if orientation == "H":
                                     for i in range(column, column + ship_size):
-                                        self.board[i][row] = SHIP
+                                        self.board[row][i] = SHIP
                                 else:
                                     for i in range(row, row + ship_size):
-                                        self.board[column][i] = SHIP
+                                        self.board[i][column] = SHIP
                                 print(" ")
                                 self.display_board()
                                 break
