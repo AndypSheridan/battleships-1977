@@ -95,7 +95,7 @@ class Board:
 
     def check_ship_placement(self, board, row, column, orientation, ship_size):
         """
-        Function to ensure ships do not overlap when placed.
+        Method to ensure ships do not overlap when placed.
         If coordinates overlap, prompts user to try again.
         """
         if orientation == "H":
@@ -207,7 +207,7 @@ class Board:
 
     def random_number(self):
         """
-        Returns a random int between 1 and 2.
+        Method returns a random int between 1 and 2.
         Int used to decide computer attack.
         """
         attack_random = random.randint(1, 2)
@@ -257,8 +257,23 @@ class Board:
         Uses comp AI methods to decide computer attack coordinates.
         Returns cooordinates to be used in the game.
         """
-        
-
-
-
-
+        while True:
+            if self.user == "player":
+                print("Sir, weapons are charged and ready!\n")
+                try:
+                    row = input("Please select a row 0-5: \n")
+                    if row in self.valid_row_input:
+                        row = int(row)
+                        break
+                    else:
+                        raise ValueError
+                except ValueError:
+                    print("Sir, those coordinates are out of range...please enter a number 0-5")
+            elif self.user == "computer guess":
+                row = self.comp_attack_row()
+                if row == range(0, 6):
+                    break
+                else:
+                    row = random.randint(0, 5)
+                    break
+        return row, column
