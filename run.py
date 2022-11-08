@@ -351,5 +351,11 @@ class Board:
                     computer_lives -= 1
                     print("Brace yourself Sir, the enemy are attacking...")
                     time.sleep(2)
+                    if computer_lives == 0:
+                        print("Sir, enemy shields are depleted, they're retreating!")
+                        print("We have won!!")
+                        print(" ")
+                        print(END_OF_ROUND)
+                        break
 
 
