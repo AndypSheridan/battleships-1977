@@ -324,48 +324,48 @@ class Board:
                     self.lives = counter
         return self.lives
 
-    def play_game(player_board, player_guess, computer_board, computer_guess):
-        """
-        giugiui
-        """
-        player_turn = 0
-        computer_turn = 1
-        player_lives = 8
-        computer_lives = 8
-        while True:
-            if player_turn < computer_turn:
+def play_game(player_board, player_guess, computer_board, computer_guess):
+    """
+    giugiui
+    """
+    player_turn = 0
+    computer_turn = 1
+    player_lives = 8
+    computer_lives = 8
+    while True:
+        if player_turn < computer_turn:
+            player_guess.display_board()
+            row, column = player_board.player_attack()
+            if player_guess.board[row][column] == ALREADY_GUESSED:
+                print("Sir, we have already fired on these coordinates!\n")
+            elif player_guess.board[row][column] == HIT:
+                print("Sir, we have already hit a ship at these coordinates!\n")
+            elif computer_board.board[row][column] == SHIP:
+                print(" ")
+                print(END_OF_ROUND)
+                print("Great shot Sir, we hit a ship!\n")
+                player_guess.board[row][column] = HIT
+                player_turn += 1
+                player_guess.lives_counter()
                 player_guess.display_board()
-                row, column = player_board.player_attack()
-                if player_guess.board[row][column] == ALREADY_GUESSED:
-                    print("Sir, we have already fired on these coordinates!\n")
-                elif player_guess.board[row][column] == HIT:
-                    print("Sir, we have already hit a ship at these coordinates!\n")
-                elif computer_board.board[row][column] == SHIP:
+                computer_lives -= 1
+                print("Brace yourself Sir, the enemy are attacking...")
+                time.sleep(2)
+                if computer_lives == 0:
+                    print("Sir, enemy shields are depleted, they're retreating!")
+                    print("We have won!!")
                     print(" ")
                     print(END_OF_ROUND)
-                    print("Great shot Sir, we hit a ship!\n")
-                    player_guess.board[row][column] = HIT
-                    player_turn += 1
-                    player_guess.lives_counter()
-                    player_guess.display_board()
-                    computer_lives -= 1
-                    print("Brace yourself Sir, the enemy are attacking...")
-                    time.sleep(2)
-                    if computer_lives == 0:
-                        print("Sir, enemy shields are depleted, they're retreating!")
-                        print("We have won!!")
-                        print(" ")
-                        print(END_OF_ROUND)
-                        break
-                else:
-                    print(" ")
-                    print(END_OF_ROUND)
-                    print("\Missiles have missed, Sir!\n")
-                    player_guess.board[row][column] = ALREADY_GUESSED
-                    player_turn += 1
-                    player_guess.display_board()
-                    print("Brace yourself Sir, the enemy are attacking...")
-                    time.sleep(2)
+                    break
+            else:
+                print(" ")
+                print(END_OF_ROUND)
+                print("\Missiles have missed, Sir!\n")
+                player_guess.board[row][column] = ALREADY_GUESSED
+                player_turn += 1
+                player_guess.display_board()
+                print("Brace yourself Sir, the enemy are attacking...")
+                time.sleep(2)
         if computer_turn == player_turn:
             row, column = computer_guess.player_attack()
             if computer_guess.board[row][column] == ALREADY_GUESSED:
@@ -389,14 +389,14 @@ class Board:
                     print(" ")
                     print(END_OF_ROUND)
                     break
-                else:
-                    print("Sir, they have missed our ships!\n")
-                    computer_guess.board[row][column] = ALREADY_GUESSED
-                    computer_turn += 1
-                    player_board.display_board()
-                    computer_guess.attack_list.append(1)
-                    computer_guess.count_misses()
-                    time.sleep(2)
+            else:
+                print("Sir, they have missed our ships!\n")
+                computer_guess.board[row][column] = ALREADY_GUESSED
+                computer_turn += 1
+                player_board.display_board()
+                computer_guess.attack_list.append(1)
+                computer_guess.count_misses()
+                time.sleep(2)
 
 
 def play_again():
@@ -430,4 +430,12 @@ def new_game():
     start_screen()
     player_name = get_name()
     player_board = Board(player_name, "player")
-    player_guess = Board(name, user)
+    player_guess = Board("Radar", "player guess")
+    computer_board = Board("ENEMY", "computer")
+    computer_guess = Board("ENEMY GUESS", "computer guess")
+    computer_board.populate_boards()
+    player_board.display_board()
+    player_board.populate_boards()
+    time.sleep(1)
+    PRINT(END_OF_ROUND)
+    PRINT(" ")
