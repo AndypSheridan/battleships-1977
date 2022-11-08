@@ -219,16 +219,16 @@ class Board:
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
-        row_hit = self.row_arry[-1]
+        row_hit = self.row_list[-1]
         if row_hit == 6:
             row = random.randint(0, 6)
             return row
         else:
-            attk_random = self.random_attk_int()
-            if attk_random == 1:
+            attack_random = self.random_number()
+            if attack_random == 1:
                 row = row_hit + 1
                 return row
-            elif attk_random == 2:
+            elif attack_random == 2:
                 row = row_hit - 1
                 return row
 
@@ -238,16 +238,16 @@ class Board:
         Returns a value for the column based
         off last hit ship on comp_guess board.
         """
-        column_hit = self.column_arry[-1]
+        column_hit = self.column_list[-1]
         if column_hit == 6:
             column = random.randint(0, 6)
             return column
         else:
-            attk_random = self.random_attk_int()
-            if attk_random == 1:
+            attack_random = self.random_number()
+            if attack_random == 1:
                 column = column_hit + 1
                 return column
-            elif attk_random == 2:
+            elif attack_random == 2:
                 column = column_hit - 1
                 return column
 
