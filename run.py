@@ -416,3 +416,8 @@ def play_again():
             print("Thank you for playing. May the force be with you...always")
             print(" ")
             print(END_OF_ROUND)
+            return False
+        else:
+            print(" ")
+            print("Please enter Y or N")
+            player_response = input("Enter Y or N: \n").upper()
