@@ -277,7 +277,7 @@ class Board:
                 row = row_hit + 1
                 return row
             elif attack_random == 2:
-                row = column_hit - 1
+                row = row_hit - 1
                 return row
 
     def player_attack(self):
@@ -290,20 +290,20 @@ class Board:
             if self.user == "player":
                 print("Sir, weapons are charged and ready!\n")
                 try:
-                    row = input("Please select a row 0-5: \n")
-                    if row in self.valid_row_input:
-                        row = int(row)
-                        break
+                    column = input("Please select a column A-F: \n").upper()
+                    if not re.match("^[A-F]*$", column):
+                        print("Sir, those coordinates are out of range...please enter a number 0-5")
                     else:
-                        raise ValueError
-                except ValueError:
-                    print("Sir, those coordinates are out of range...please enter a number 0-5")
+                        column = self.col_letters_as_numbers[column]
+                        break
+                except KeyError:
+                    print("Sir, please enter a letter")
             elif self.user == "computer guess":
-                row = self.comp_attack_row()
-                if row == range(0, 6):
+                column = self.comp_attack_column()
+                if column == range(0, 6):
                     break
                 else:
-                    row = random.randint(0, 5)
+                    column = random.randint(0, 5)
                     break
         while True:
             if self.user == "player":
