@@ -296,6 +296,22 @@ class Board:
                     break
         return row, column
 
+    def count_misses(self):
+        """
+        Tracks last four AI attacks. If 4, 
+        forces random column and row.
+        """
+        one = self.attack_list[-1]
+        two = self.attack_list[-2]
+        three = self.attack_list[-3]
+        four = self.attack_list[-4]
+        sum_of_attack = one + two + three + four
+        if sum_of_attack == 8:
+            self.column_list.append(6)
+            self.row_list.append(6)
+        else:
+            pass
+
     def lives_counter(self):
         """
         ohkjj
@@ -307,3 +323,5 @@ class Board:
                     counter -= 1
                     self.lives = counter
         return self.lives
+
+    
