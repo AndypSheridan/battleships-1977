@@ -54,15 +54,20 @@ def get_name():
 
 def back_story():
     """
-    Displays simple back story.
-    Displays rules and legend.
+    Displays a simple back story to the player.
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
     print("You must take command of the fleet and destroy them before they \
 destroy the rebel alliance!")
-    print("Targeting scanners are at minimal operating efficiency so \
-please note:")
+    print("Radar reveals the enemy have four ships of varying size.")
+    print("Fortunately we have four ships of our own...")
+    input("Press Enter to continue...")
+
+
+def game_rules():
+    print("Targeting scanners are ready")
+    print("Please not the following: ")
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
