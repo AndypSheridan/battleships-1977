@@ -1,7 +1,8 @@
 """
-Import libaries:
-random used for random choice and number,
-time to simulate cpu though process,
+Import modules:
+random used for random choice and number.
+time is used to allow the usertime to read or simulate cpu
+decision making.
 re to allow checking if a regular expression matches a string
 """
 import random
@@ -197,7 +198,8 @@ class Board:
                 print("R2D2: Beep...Invalid input, please try again...boop")
         while True:
             try:
-                column = input("Commander, please select a column A-F: \n").upper()
+                column = input("Commander, please select a column A-F: \n")\
+                    .upper()
                 if not re.match("^[A-F]*$", column):
                     print("C3PO: Sir! Please enter a letter A-F...")
                 else:
