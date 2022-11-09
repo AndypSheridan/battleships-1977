@@ -1,8 +1,7 @@
 """
 Import libaries:
-colorama used for text color,
 random used for random choice and number,
-time to simulate computer though process,
+time to simulate cpu though process,
 re to allow checking if a regular expression matches a string
 """
 import random
@@ -73,7 +72,7 @@ please note:")
 
 class Board:
     """
-    Class to create player and computer boards, 
+    Class to create player and cpu boards, 
     plus guess boards for each.
     Only player and player guess boards will be displayed.
     """
@@ -215,7 +214,7 @@ class Board:
         size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
             while True:
-                if self.user == "computer":
+                if self.user == "cpu":
                     orientation = random.choice(["H", "V"])
                     row = random.randint(0, 5)
                     column = random.randint(0, 5)
@@ -247,14 +246,14 @@ class Board:
     def random_number(self):
         """
         Method returns a random int between 1 and 2.
-        Int used to decide computer attack.
+        Int used to decide cpu attack.
         """
         attack_random = random.randint(1, 2)
         return attack_random
 
     def comp_attack_column(self):
         """
-        Holds logic for computers attack.
+        Holds logic for cpus attack.
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
@@ -273,7 +272,7 @@ class Board:
 
     def comp_attack_row(self):
         """
-        Holds the logic for computers attack.
+        Holds the logic for cpus attack.
         Returns a value for the column based
         off last hit ship on comp_guess board.
         """
@@ -293,7 +292,7 @@ class Board:
     def player_attack(self):
         """
         Prompts player to input attack coordinates.
-        Uses comp AI methods to decide computer attack coordinates.
+        Uses comp AI methods to decide cpu attack coordinates.
         Returns cooordinates to be used in the game.
         """
         while True:
@@ -308,7 +307,7 @@ class Board:
                         break
                 except KeyError:
                     print("Sir, please enter a letter")
-            elif self.user == "computer guess":
+            elif self.user == "cpu guess":
                 column = self.comp_attack_column()
                 if column == range(0, 6):
                     break
@@ -326,7 +325,7 @@ class Board:
                         raise ValueError
                 except ValueError:
                     print("Please Enter a number 0-5")
-            elif self.user == "computer guess":
+            elif self.user == "cpu guess":
                 row = self.comp_attack_row()
                 if row == range(0, 6):
                     break
@@ -364,23 +363,23 @@ class Board:
         return self.shields
 
 
-def play_game(player_board, player_guess, computer_board, computer_guess):
+def play_game(player_board, player_guess, cpu_board, cpu_guess):
     """
     giugiui
     """
     player_turn = 0
-    computer_turn = 1
+    cpu_turn = 1
     player_shields = 8
-    computer_shields = 8
+    cpu_shields = 8
     while True:
-        if player_turn < computer_turn:
+        if player_turn < cpu_turn:
             player_guess.display_board()
             column, row = player_board.player_attack()
             if player_guess.board[row][column] == ALREADY_GUESSED:
                 print("Sir, we have already fired on these coordinates!\n")
             elif player_guess.board[row][column] == HIT:
                 print("Sir, we have already hit a ship at these coordinates!\n")
-            elif computer_board.board[row][column] == SHIP:
+            elif cpu_board.board[row][column] == SHIP:
                 print(" ")
                 print(END_OF_ROUND)
                 print("Great shot Sir, we hit a ship!\n")
@@ -388,10 +387,10 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 player_turn += 1
                 player_guess.shields_counter()
                 player_guess.display_board()
-                computer_shields -= 1
+                cpu_shields -= 1
                 print("Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1)
-                if computer_shields == 0:
+                if cpu_shields == 0:
                     print("Sir, enemy shields are depleted, they're retreating!")
                     print("We have won!!")
                     print(" ")
@@ -406,23 +405,23 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                 player_guess.display_board()
                 print("Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1)
-        if computer_turn == player_turn:
-            row, column = computer_guess.player_attack()
-            if computer_guess.board[row][column] == ALREADY_GUESSED:
+        if cpu_turn == player_turn:
+            row, column = cpu_guess.player_attack()
+            if cpu_guess.board[row][column] == ALREADY_GUESSED:
                 pass
-            elif computer_guess.board[row][column] == HIT:
+            elif cpu_guess.board[row][column] == HIT:
                 pass
             elif player_board.board[row][column] == SHIP:
                 print("Sir, the enemy have hit one of our ships!\n")
-                computer_turn += 1
+                cpu_turn += 1
                 player_shields -= 1
-                computer_guess.columns.append(column)
-                computer_guess.rows.append(row)
-                computer_guess.board[row][column] = HIT
+                cpu_guess.columns.append(column)
+                cpu_guess.rows.append(row)
+                cpu_guess.board[row][column] = HIT
                 player_board.board[row][column] = HIT
                 player_board.shields_counter()
                 player_board.display_board()
-                computer_guess.cpu_attacks.append(0)
+                cpu_guess.cpu_attacks.append(0)
                 time.sleep(1)
                 if player_shields == 0:
                     print("C3PO: Sir, our shields are depleted, we're doomed!")
@@ -431,11 +430,11 @@ def play_game(player_board, player_guess, computer_board, computer_guess):
                     break
             else:
                 print("Sir, they have missed our ships!\n")
-                computer_guess.board[row][column] = ALREADY_GUESSED
-                computer_turn += 1
+                cpu_guess.board[row][column] = ALREADY_GUESSED
+                cpu_turn += 1
                 player_board.display_board()
-                computer_guess.cpu_attacks.append(1)
-                computer_guess.count_misses()
+                cpu_guess.cpu_attacks.append(1)
+                cpu_guess.count_misses()
                 time.sleep(2)
 
 
@@ -480,15 +479,15 @@ def new_game():
     print("Now, we must deploy our fleet, we have four ships...")
     player_board = Board(player_name, "player")
     player_guess = Board("Space Radar", "player guess")
-    computer_board = Board("Empire", "computer")
-    computer_guess = Board("Empire guess", "computer guess")
-    computer_board.populate_boards()
+    cpu_board = Board("Empire", "cpu")
+    cpu_guess = Board("Empire guess", "cpu guess")
+    cpu_board.populate_boards()
     player_board.display_board()
     player_board.populate_boards()
     time.sleep(1)
     print(END_OF_ROUND)
     print(" ")
-    play_game(player_board, player_guess, computer_board, computer_guess)
+    play_game(player_board, player_guess, cpu_board, cpu_guess)
     play_again()
 
 # Call new game function to begin game
