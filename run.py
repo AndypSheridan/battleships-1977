@@ -60,14 +60,19 @@ def back_story():
 preparing to attack!")
     print("You must take command of the fleet and destroy them before they \
 destroy the rebel alliance!")
+    time.sleep(2)
     print("Radar reveals the enemy have four ships of varying size.")
     print("Fortunately we have four ships of our own...")
     input("Press Enter to continue...")
 
 
 def game_rules():
+    """
+    Displays rules and legend to the player.
+    """
     print("Targeting scanners are ready")
-    print("Please not the following: ")
+    print("Please note the following: ")
+    time.sleep(1.5)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
@@ -481,6 +486,7 @@ def new_game():
     player_name = get_name()
     print(f"Welcome, Commander {player_name}, may the force be with us!")
     back_story()
+    game_rules()
     print("Now, we must deploy our fleet, we have four ships...")
     player_board = Board(player_name, "player")
     player_guess = Board("Space Radar", "player guess")
