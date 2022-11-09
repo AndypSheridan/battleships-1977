@@ -42,6 +42,22 @@ def start_screen():
 
                                                                       
 """)
+
+
+def get_name():
+    """
+    Prompts the user to enter their name.
+    Stores the name for use in the game.
+    """
+    player_name = input("\nWelcome to BattleShips 1977, please enter your name...")
+    return player_name
+
+
+def back_story():
+    """
+    Displays simple back story.
+    Displays rules and legend.
+    """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
     print("You must take command of the fleet and destroy them before they \
@@ -52,6 +68,7 @@ please note:")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
+    input("Press Enter to continue...")
 
 
 class Board:
@@ -347,15 +364,6 @@ class Board:
         return self.shields
 
 
-def get_name():
-    """
-    Prompts the user to enter their name.
-    Stores the name for use in the game.
-    """
-    player_name = input("\nGreetings commander, please enter your name...")
-    return player_name
-
-
 def play_game(player_board, player_guess, computer_board, computer_guess):
     """
     giugiui
@@ -468,11 +476,12 @@ def new_game():
     start_screen()
     player_name = get_name()
     print(f"Welcome, Commander {player_name}, may the force be with us!")
+    back_story()
     print("Now, we must deploy our fleet, we have four ships...")
     player_board = Board(player_name, "player")
     player_guess = Board("Space Radar", "player guess")
-    computer_board = Board("ENEMY", "computer")
-    computer_guess = Board("ENEMY GUESS", "computer guess")
+    computer_board = Board("Empire", "computer")
+    computer_guess = Board("Empire guess", "computer guess")
     computer_board.populate_boards()
     player_board.display_board()
     player_board.populate_boards()
