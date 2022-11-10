@@ -354,22 +354,6 @@ class Board:
                     break
         return column, row
 
-    def count_misses(self):
-        """
-        Tracks last four cpu attacks. If 4, 
-        forces random column and row.
-        """
-        one = self.cpu_attacks[-1]
-        two = self.cpu_attacks[-2]
-        three = self.cpu_attacks[-3]
-        four = self.cpu_attacks[-4]
-        sum_of_attack = one + two + three + four
-        if sum_of_attack == 8:
-            self.columns.append(6)
-            self.rows.append(6)
-        else:
-            pass
-
     def shields_counter(self):
         """
         Tracks cpu and player hits.
@@ -457,7 +441,6 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
                 cpu_turn += 1
                 player_board.display_board()
                 cpu_guess.cpu_attacks.append(1)
-                cpu_guess.count_misses()
                 time.sleep(2)
 
 
@@ -474,7 +457,7 @@ def play_again():
     while True:
         if player_response == "Y":
             print(END_OF_ROUND)
-            new_game()
+            main()
         elif player_response == "N":
             print(" ")
             print("Thank you for playing. May the force be with you...always")
@@ -514,5 +497,6 @@ def main():
     play_game(player_board, player_guess, cpu_board, cpu_guess)
     play_again()
 
+
 # Calls main function to start game
-main()()
+main()
