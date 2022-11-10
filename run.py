@@ -265,7 +265,7 @@ class Board:
 
     def random_number(self):
         """
-        Method returns a random int between 1 and 2.
+        Method returns a random number between 1 and 2.
         Used to decide random cpu attack.
         """
         random_attack = random.randint(1, 2)
@@ -372,7 +372,9 @@ class Board:
 
     def shields_counter(self):
         """
-        ohkjj
+        Tracks cpu and player hits.
+        Deducts one from shield counter
+        on each successful hit.
         """
         counter = 10
         for row in self.board:
