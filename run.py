@@ -356,7 +356,7 @@ class Board:
 
     def count_misses(self):
         """
-        Tracks last four AI attacks. If 4, 
+        Tracks last four cpu attacks. If 4, 
         forces random column and row.
         """
         one = self.cpu_attacks[-1]
@@ -387,7 +387,8 @@ class Board:
 
 def play_game(player_board, player_guess, cpu_board, cpu_guess):
     """
-    giugiui
+    Contains game logic.
+    Ensures player goes first
     """
     player_turn = 0
     cpu_turn = 1
@@ -464,7 +465,7 @@ def play_again():
     """
     Upon finishing the game,
     The player is offered the choice
-    of playing another game or 
+    of playing another game or
     quitting.
     """
     print("\nWould you like to play again?")
