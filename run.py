@@ -54,7 +54,8 @@ def get_name():
 
 def back_story():
     """
-    Displays a simple back story to the player.
+    Displays a simple back story to the user.
+    Uses time module to allow user to process the text.
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
@@ -68,7 +69,8 @@ destroy the rebel alliance!")
 
 def game_rules():
     """
-    Displays rules and legend to the player.
+    Displays rules and legend to the user.
+    Uses time module to allow user to process the text.
     """
     print("Targeting scanners are ready")
     print("Please note the following: ")
