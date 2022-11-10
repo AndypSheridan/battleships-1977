@@ -86,7 +86,7 @@ class Board:
     """
     Class to create player and cpu boards, 
     plus guess boards for each.
-    Only player and player guess boards will be displayed.
+    Only player and player guess boards will be displayed in the game.
     """
     def __init__(self, name, user):
         self.board = [[EMPTY] * 6 for i in range(6)]
@@ -108,6 +108,7 @@ class Board:
     def display_board(self):
         """
         Prints boards to the terminal.
+        Displays shield strength.
         """
         print(f"Board: {self.name}\n")
         print("  A B C D E F ")
@@ -120,6 +121,8 @@ class Board:
 
     def place_ships(self, ship_size, row, column, orientation):
         """
+        Method to ensure user places a ship at 
+        valid coordinates and not off the board.
         """
         if orientation == "H":
             if column + ship_size > 6:
