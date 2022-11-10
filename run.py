@@ -229,7 +229,7 @@ class Board:
     def populate_boards(self):
         """
         Populates player and cpu boards.
-        CPU placement is decided randomly.
+        CPU ship placement is decided randomly.
         """
         size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
@@ -268,8 +268,8 @@ class Board:
         Method returns a random int between 1 and 2.
         Int used to decide cpu attack.
         """
-        attack_random = random.randint(1, 2)
-        return attack_random
+        random_attack = random.randint(1, 2)
+        return random_attack
 
     def comp_attack_column(self):
         """
@@ -282,11 +282,11 @@ class Board:
             column = random.randint(0, 5)
             return column
         else:
-            attack_random = self.random_number()
-            if attack_random == 1:
+            random_attack = self.random_number()
+            if random_attack == 1:
                 column = column_hit + 1
                 return column
-            elif attack_random == 2:
+            elif random_attack == 2:
                 column = column_hit - 1
                 return column
 
@@ -301,11 +301,11 @@ class Board:
             row = random.randint(0, 6)
             return row
         else:
-            attack_random = self.random_number()
-            if attack_random == 1:
+            random_attack = self.random_number()
+            if random_attack == 1:
                 row = row_hit + 1
                 return row
-            elif attack_random == 2:
+            elif random_attack == 2:
                 row = row_hit - 1
                 return row
 
