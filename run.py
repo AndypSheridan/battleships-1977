@@ -95,7 +95,7 @@ class Board:
         self.user = user
         self.columns = [6]
         self.rows = [6]
-        self.shields = 8
+        self.shields = 10
 
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
@@ -266,7 +266,7 @@ class Board:
     def random_number(self):
         """
         Method returns a random int between 1 and 2.
-        Int used to decide cpu attack.
+        Used to decide random cpu attack.
         """
         random_attack = random.randint(1, 2)
         return random_attack
@@ -374,7 +374,7 @@ class Board:
         """
         ohkjj
         """
-        counter = 8
+        counter = 10
         for row in self.board:
             for column in row:
                 if column == HIT:
@@ -389,8 +389,8 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
     """
     player_turn = 0
     cpu_turn = 1
-    player_shields = 8
-    cpu_shields = 8
+    player_shields = 10
+    cpu_shields = 10
     while True:
         if player_turn < cpu_turn:
             player_guess.display_board()
