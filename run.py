@@ -121,7 +121,7 @@ class Board:
 
     def place_ships(self, ship_size, row, column, orientation):
         """
-        Method to ensure user places a ship at 
+        Method to ensure user places a ship at
         valid coordinates and not off the board.
         """
         if orientation == "H":
@@ -170,7 +170,8 @@ class Board:
 
     def ship_type(self, ship_size):
         """
-        Allows user to place ships on board.
+        Method defines ship sizes.
+        Informs user of ship type and size.
         """
         print("Please select horizontal \u2192 or vertical \u2193 orientation")
         print("Commander, make sure the ships do not collide!")
@@ -189,7 +190,8 @@ class Board:
     def player_ship_placement(self):
         """
         Asks the user for their preferred orientation,
-        row and column. Places ships on the board.
+        row and column.
+        Provides feedback to user if invalid input is entered.
         """
         while True:
             try:
@@ -226,7 +228,8 @@ class Board:
 
     def populate_boards(self):
         """
-        Populates boards
+        Populates player and cpu boards.
+        CPU placement is decided randomly.
         """
         size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
@@ -272,7 +275,7 @@ class Board:
         """
         Holds logic for cpu attack.
         Returns a value for the row based
-        off last hit ship on comp_guess board.
+        off last hit ship on cpu guess board.
         """
         column_hit = self.columns[-1]
         if column_hit == 6:
@@ -309,7 +312,7 @@ class Board:
     def player_attack(self):
         """
         Prompts player to input attack coordinates.
-        Uses comp AI methods to decide cpu attack coordinates.
+        Uses AI methods to decide cpu attack coordinates.
         Returns cooordinates to be used in the game.
         """
         while True:
