@@ -10,7 +10,7 @@ import time
 import re
 
 
-# Global variables used in game boards
+# Global variables allocated to tiles in game boards
 END_OF_ROUND = "*" * 80
 ALREADY_GUESSED = "0"
 EMPTY = "-"
@@ -20,9 +20,8 @@ HIT = "X"
 
 def start_screen():
     """
-    Displays ASCII art on programme load
+    Displays ASCII art to user
     each time the game begins.
-    Displays a brief story and the legend.
     See credits for ASCII art.
     """
     print("""\
@@ -189,7 +188,8 @@ class Board:
         """
         while True:
             try:
-                orientation = input("Select Ship Orientation (H or V): \n").upper()
+                orientation = input("Select Ship Orientation (H or V): \n")\
+                    .upper()
                 if orientation == "H" or orientation == "V":
                     break
                 else:
@@ -265,7 +265,7 @@ class Board:
 
     def comp_attack_column(self):
         """
-        Holds logic for cpus attack.
+        Holds logic for cpu attack.
         Returns a value for the row based
         off last hit ship on comp_guess board.
         """
@@ -284,7 +284,7 @@ class Board:
 
     def comp_attack_row(self):
         """
-        Holds the logic for cpus attack.
+        Holds the logic for cpu attack.
         Returns a value for the column based
         off last hit ship on comp_guess board.
         """
@@ -476,9 +476,9 @@ def play_again():
             player_response = input("Enter Y or N: \n").upper()
 
 
-def new_game():
+def main():
     """
-    Function to start new game.
+    Runs all functions above to start new game.
     Shows start screen,
     Prompts player for their name.
     Creates four instances of board class.
@@ -503,5 +503,5 @@ def new_game():
     play_game(player_board, player_guess, cpu_board, cpu_guess)
     play_again()
 
-# Call new game function to begin game
-new_game()
+# Calls main function to start game
+main()()
