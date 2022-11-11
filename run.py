@@ -83,7 +83,7 @@ def back_story():
     Uses time module to allow user to process the text.
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
-preparing to attack!")
+preparing to attack!\n")
     print("Take command of the fleet and destroy them before they \
 can wipe us out.")
     input("\nPress Enter to continue...")
@@ -109,16 +109,16 @@ def game_rules():
     Displays rules and legend to the user.
     Uses time module to allow user to process the text.
     """
-    print("Targeting scanners are ready!")
+    print("Targeting scanners are ready!\n")
     print("Please note the following...")
     time.sleep(2)
-    print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
+    print(f"\nCoordinates marked {EMPTY} have not been guessed yet\n")
     time.sleep(1)
-    print(f"Coordinates marked {SHIP} represent a spaceship")
+    print(f"Coordinates marked {SHIP} represent a spaceship\n")
     time.sleep(1)
-    print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
+    print(f"Coordinates marked {HIT} show a hit or destroyed enemy\n")
     time.sleep(1)
-    print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed")
+    print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
     time.sleep(1)
     input("\nPress Enter to continue...")
     os.system("clear")
@@ -131,6 +131,33 @@ Commander\n")
     time.sleep(1)
     input("Press Enter to continue...")
     os.system("clear")
+
+
+def win_screen():
+    print(""" 
+
+____    ____  ______    __    __     ____    __    ____  __  .__   __.  __  
+\   \  /   / /  __  \  |  |  |  |    \   \  /  \  /   / |  | |  \ |  | |  | 
+ \   \/   / |  |  |  | |  |  |  |     \   \/    \/   /  |  | |   \|  | |  | 
+  \_    _/  |  |  |  | |  |  |  |      \            /   |  | |  . `  | |  | 
+    |  |    |  `--'  | |  `--'  |       \    /\    /    |  | |  |\   | |__| 
+    |__|     \______/   \______/         \__/  \__/     |__| |__| \__| (__) 
+                                                                            
+
+""")
+
+
+def lose_screen():
+    print("""
+
+____    ____  ______    __    __      __        ______        _______. _______ 
+\   \  /   / /  __  \  |  |  |  |    |  |      /  __  \      /       ||   ____|
+ \   \/   / |  |  |  | |  |  |  |    |  |     |  |  |  |    |   (----`|  |__   
+  \_    _/  |  |  |  | |  |  |  |    |  |     |  |  |  |     \   \    |   __|  
+    |  |    |  `--'  | |  `--'  |    |  `----.|  `--'  | .----)   |   |  |____ 
+    |__|     \______/   \______/     |_______| \______/  |_______/    |_______|
+                                                                               
+""")
 
 
 class Board:
@@ -376,17 +403,18 @@ let's place it\n")
         """
         while True:
             if self.user == "player":
-                print("Sir, weapons are charged and ready!")
+                print("C3PO: Sir, weapons are charged and ready!")
                 try:
-                    column = input("Please select a column A-F: ").upper()
+                    column = input(
+                        "C3PO: Please select a column A-F: ").upper()
                     if not re.match("^[A-F]*$", column):
-                        print("Sir, those coordinates are out of range...\
-please enter a number 0-5: ")
+                        print("C3PO: Sir, those coordinates are out of range!\
+Please enter a number 0-5: ")
                     else:
                         column = self.col_letters_as_numbers[column]
                         break
                 except KeyError:
-                    print("Sir, please enter a letter")
+                    print("C3PO: Sir, please enter a letter")
             elif self.user == "cpu guess":
                 column = self.comp_attack_column()
                 if column == range(0, 6):
@@ -397,14 +425,14 @@ please enter a number 0-5: ")
         while True:
             if self.user == "player":
                 try:
-                    row = input("Please select a row 0-5: ")
+                    row = input("C3PO: Please select a row 0-5: ")
                     if row in self.valid_row_input:
                         row = int(row)
                         break
                     else:
                         raise ValueError
                 except ValueError:
-                    print("Please Enter a number 0-5")
+                    print("C3PO: Please Enter a number 0-5")
             elif self.user == "cpu guess":
                 row = self.comp_attack_row()
                 if row == range(0, 6):
@@ -443,40 +471,42 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
             player_guess.display_board()
             column, row = player_board.player_attack()
             if player_guess.board[row][column] == ALREADY_GUESSED:
-                print("Sir, we have already fired on these coordinates!\n")
+                print("C3PO: Sir, we have already fired on these \
+coordinates!\n")
             elif player_guess.board[row][column] == HIT:
-                print("Sir, we have already hit a ship at \
+                print("C3PO: Sir, we have already hit a ship at \
 these coordinates!\n")
             elif cpu_board.board[row][column] == SHIP:
                 print(" ")
                 print(END_OF_ROUND)
-                print("Great shot Sir, we hit a ship!\n")
+                print("C3PO: Great shot Sir, we hit a ship!\n")
                 time.sleep(1.5)
                 player_guess.board[row][column] = HIT
                 player_turn += 1
                 player_guess.shields_counter()
                 player_guess.display_board()
                 cpu_shields -= 1
-                print("Brace yourself Sir, the enemy are attacking...")
+                print("C3PO: Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1.5)
                 if cpu_shields == 0:
-                    print("Sir, enemy shields are depleted, \
+                    print("C3PO: Sir, enemy shields are depleted, \
 they're retreating!")
                     print("We have won!!")
+                    win_screen()
                     print(" ")
-                    time.sleep(1.5)
+                    time.sleep(3)
                     print(END_OF_ROUND)
                     os.system("clear")
                     break
             else:
                 print(" ")
                 print(END_OF_ROUND)
-                print("\nMissiles have missed, Sir!\n")
+                print("\nC3PO: Our missiles have missed, Sir!\n")
                 time.sleep(1.5)
                 player_guess.board[row][column] = ALREADY_GUESSED
                 player_turn += 1
                 player_guess.display_board()
-                print("Brace yourself Sir, the enemy are attacking...")
+                print("C3PO: Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1.5)
         if cpu_turn == player_turn:
             row, column = cpu_guess.player_attack()
@@ -485,7 +515,7 @@ they're retreating!")
             elif cpu_guess.board[row][column] == HIT:
                 pass
             elif player_board.board[row][column] == SHIP:
-                print("Sir, the enemy have hit one of our ships!\n")
+                print("C3PO: Sir, the enemy have hit one of our ships!\n")
                 time.sleep(1.5)
                 cpu_turn += 1
                 player_shields -= 1
@@ -553,7 +583,7 @@ def main():
     game_rules()
     print("Now, we must deploy our fleet, we have four ships...")
     player_board = Board(player_name, "player")
-    player_guess = Board("Space Radar", "player guess")
+    player_guess = Board("Targeting Scanners", "player guess")
     cpu_board = Board("Empire", "cpu")
     cpu_guess = Board("Empire guess", "cpu guess")
     cpu_board.populate_boards()
