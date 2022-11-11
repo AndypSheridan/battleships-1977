@@ -137,7 +137,7 @@ class Board:
         for row in self.board:
             print('%d|%s' % (row_number, ' '.join(row)))
             row_number += 1
-        print(f"\nShield strength: {self.shields}\n")
+        print(f"\nShield strength: {self.shields}")
 
     def place_ships(self, ship_size, row, column, orientation):
         """
