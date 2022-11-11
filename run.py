@@ -84,8 +84,8 @@ def game_rules():
     Displays rules and legend to the user.
     Uses time module to allow user to process the text.
     """
-    print("Targeting scanners are ready")
-    print("Please note the following: ")
+    print("Targeting scanners are ready!")
+    print("Please note the following...")
     time.sleep(2)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
@@ -137,7 +137,7 @@ class Board:
         for row in self.board:
             print('%d|%s' % (row_number, ' '.join(row)))
             row_number += 1
-        print(f"\nShield strength: {self.shields}")
+        print(f"Shield strength: {self.shields}\n")
 
     def place_ships(self, ship_size, row, column, orientation):
         """
@@ -217,7 +217,7 @@ let's place it\n")
         """
         while True:
             try:
-                orientation = input("Select Ship Orientation (H or V): \n")\
+                orientation = input("Select Ship Orientation (H or V): ")\
                     .upper()
                 if orientation == "H" or orientation == "V":
                     break
@@ -227,7 +227,7 @@ let's place it\n")
                 print("R2D2: Beep...Invalid input, please try again...boop")
         while True:
             try:
-                column = input("Commander, please select a column A-F: \n")\
+                column = input("Commander, please select a column A-F: ")\
                     .upper()
                 if not re.match("^[A-F]*$", column):
                     print("C3PO: Sir! Please enter a letter A-F...")
@@ -238,7 +238,7 @@ let's place it\n")
                 print("C3PO: Sir! Please enter a letter A-F")
         while True:
             try:
-                row = input("Commander, please select a row 0-5:  \n")
+                row = input("Commander, please select a row 0-5: ")
                 if row in self.valid_row_input:
                     row = int(row)
                     break
@@ -346,7 +346,7 @@ let's place it\n")
             if self.user == "player":
                 print("Sir, weapons are charged and ready!")
                 try:
-                    column = input("Please select a column A-F: \n").upper()
+                    column = input("Please select a column A-F: ").upper()
                     if not re.match("^[A-F]*$", column):
                         print("Sir, those coordinates are out of range...\
 please enter a number 0-5: ")
@@ -365,7 +365,7 @@ please enter a number 0-5: ")
         while True:
             if self.user == "player":
                 try:
-                    row = input("Please select a row 0-5: \n")
+                    row = input("Please select a row 0-5: ")
                     if row in self.valid_row_input:
                         row = int(row)
                         break
