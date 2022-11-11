@@ -25,6 +25,8 @@ def start_screen():
     each time the game begins.
     See credits for ASCII art.
     """
+    print("A long time ago, in a galaxy far, far away...")
+    input("Press Enter...")
     print("""\
 
                  __________         __    __  .__                            
@@ -88,7 +90,8 @@ class Board:
     """
     Class to create player and cpu boards,
     plus guess boards for each.
-    Only player and player guess boards will be displayed in the game.
+    Only player and player guess boards will
+    be displayed in the game.
     """
     def __init__(self, name, user):
         self.board = [[EMPTY] * 6 for i in range(6)]
