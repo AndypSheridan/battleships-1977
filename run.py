@@ -91,11 +91,15 @@ can wipe us out.")
     print("Targeting scanners reveals the enemy have four ships of varying \
 size.")
     print("\nFortunately we have four ships of our own...")
-    time.sleep(1.5)
+    time.sleep(1)
     print("\nA stolen Imperial Star Destroyer (length: 4)")
+    time.sleep(1)
     print("\nA CR90 Corvette (length: 3)")
+    time.sleep(1)
     print("\nThe Millennium Falcon with functioning hyperdrive (length: 2)")
+    time.sleep(1)
     print("\nAn X-Wing (length: 1)")
+    time.sleep(1)
     input("\nPress Enter to continue...")
     os.system("clear")
 
@@ -120,8 +124,11 @@ def game_rules():
     os.system("clear")
     print("The enemy are using the same shield configuration as us, \
 Commander\n")
+    time.sleep(1)
     print("Ten direct hits on the enemy will give us the victory!\n")
+    time.sleep(1)
     print("Unfortunately, we can also only withstand ten direct hits.\n")
+    time.sleep(1)
     input("Press Enter to continue...")
     os.system("clear")
 
