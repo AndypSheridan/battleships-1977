@@ -94,9 +94,9 @@ def game_rules():
     input("\nPress Enter to continue...")
     os.system("clear")
     print("The enemy are using the same shield configuration as us, \
-Commander/n")
-    print("Ten direct hits on the enemy will give us the victory!/n")
-    print("Unfortunately, we can also only withstand ten direct hits./n")
+Commander\n")
+    print("Ten direct hits on the enemy will give us the victory!\n")
+    print("Unfortunately, we can also only withstand ten direct hits.\n")
     input("Press Enter to continue...")
     os.system("clear")
 
