@@ -8,6 +8,7 @@ matches a string.
 """
 import random
 import time
+import os
 import re
 
 
@@ -63,9 +64,10 @@ def back_story():
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!")
-    print("You must take command of the fleet and destroy them before they \
-destroy the rebel alliance!")
+    print("Take command of the fleet and destroy them before they \
+can wipe us out.")
     time.sleep(2)
+    os.system("clear")
     print("Radar reveals the enemy have four ships of varying size.")
     print("Fortunately we have four ships of our own...")
     input("Press Enter to continue...")
@@ -78,7 +80,8 @@ def game_rules():
     """
     print("Targeting scanners are ready")
     print("Please note the following: ")
-    time.sleep(1.5)
+    time.sleep(2)
+    os.system("clear")
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
