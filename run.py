@@ -85,7 +85,7 @@ def game_rules():
 
 class Board:
     """
-    Class to create player and cpu boards, 
+    Class to create player and cpu boards,
     plus guess boards for each.
     Only player and player guess boards will be displayed in the game.
     """
@@ -394,7 +394,8 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
             if player_guess.board[row][column] == ALREADY_GUESSED:
                 print("Sir, we have already fired on these coordinates!\n")
             elif player_guess.board[row][column] == HIT:
-                print("Sir, we have already hit a ship at these coordinates!\n")
+                print("Sir, we have already hit a ship at \
+these coordinates!\n")
             elif cpu_board.board[row][column] == SHIP:
                 print(" ")
                 print(END_OF_ROUND)
