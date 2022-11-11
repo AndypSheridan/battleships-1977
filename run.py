@@ -67,7 +67,7 @@ def back_story():
 preparing to attack!")
     print("Take command of the fleet and destroy them before they \
 can wipe us out.")
-    time.sleep(5)
+    input("\nPress Enter to continue...")
     os.system("clear")
     print("Radar reveals the enemy have four ships of varying size.")
     print("\nFortunately we have four ships of our own...")
@@ -92,6 +92,10 @@ def game_rules():
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed")
     input("\nPress Enter to continue...")
+    os.system("clear")
+    print("The enemy are using the same shield configuration as us, Commander")
+    print("Ten direct hits up on the enemy will give us the victory!")
+    input("Press Enter to continue...")
     os.system("clear")
 
 
