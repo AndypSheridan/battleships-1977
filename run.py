@@ -75,7 +75,7 @@ can wipe us out.")
     print("\nA CR90 Corvette (length: 3)")
     print("\nThe Millennium Falcon with functioning hyperdrive (length: 2)")
     print("\nAn X-Wing (length: 1)")
-    input("Press Enter to continue...")
+    input("\nPress Enter to continue...")
     os.system("clear")
 
 
@@ -87,12 +87,12 @@ def game_rules():
     print("Targeting scanners are ready")
     print("Please note the following: ")
     time.sleep(2)
-    os.system("clear")
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
     print(f"Coordinates marked {SHIP} represent a spaceship")
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
-    print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed\n")
-    input("Press Enter to continue...")
+    print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed")
+    input("\nPress Enter to continue...")
+    os.system("clear")
 
 
 class Board:
@@ -124,7 +124,7 @@ class Board:
         Prints boards to the terminal.
         Displays shield strength.
         """
-        print(f"Board: {self.name}\n")
+        print(f"\nBoard: {self.name}\n")
         print("  A B C D E F ")
         print("  +-+-+-+-+-+")
         row_number = 0
@@ -338,7 +338,7 @@ let's place it\n")
         """
         while True:
             if self.user == "player":
-                print("Sir, weapons are charged and ready!\n")
+                print("Sir, weapons are charged and ready!")
                 try:
                     column = input("Please select a column A-F: \n").upper()
                     if not re.match("^[A-F]*$", column):
@@ -517,10 +517,13 @@ def main():
     cpu_guess = Board("Empire guess", "cpu guess")
     cpu_board.populate_boards()
     player_board.display_board()
+    time.sleep(1)
     player_board.populate_boards()
     time.sleep(1)
     print(END_OF_ROUND)
     print(" ")
+    time.sleep(3)
+    os.system("clear")
     play_game(player_board, player_guess, cpu_board, cpu_guess)
     play_again()
 
