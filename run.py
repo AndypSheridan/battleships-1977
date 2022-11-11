@@ -537,6 +537,7 @@ they're retreating!")
                 print("Sir, they have missed our ships!\n")
                 time.sleep(1.5)
                 cpu_guess.board[row][column] = ALREADY_GUESSED
+                player_board.board[row][column] = ALREADY_GUESSED
                 cpu_turn += 1
                 player_board.display_board()
                 cpu_guess.cpu_attacks.append(1)
