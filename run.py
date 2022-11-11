@@ -3,6 +3,7 @@ Import modules:
 random used for random choice and number.
 time is used to allow the user time to read
 or simulate cpu decision making.
+os is used to prevent overloading the display
 re to allow checking if a regular expression
 matches a string.
 """
@@ -66,11 +67,16 @@ def back_story():
 preparing to attack!")
     print("Take command of the fleet and destroy them before they \
 can wipe us out.")
-    time.sleep(2)
+    time.sleep(5)
     os.system("clear")
     print("Radar reveals the enemy have four ships of varying size.")
-    print("Fortunately we have four ships of our own...")
+    print("\nFortunately we have four ships of our own...")
+    print("\nA stolen Imperial Star Destroyer (length: 4)")
+    print("\nA CR90 Corvette (length: 3)")
+    print("\nThe Millennium Falcon with functioning hyperdrive (length: 2)")
+    print("\nAn X-Wing (length: 1)")
     input("Press Enter to continue...")
+    os.system("clear")
 
 
 def game_rules():
@@ -407,19 +413,22 @@ these coordinates!\n")
                 print(" ")
                 print(END_OF_ROUND)
                 print("Great shot Sir, we hit a ship!\n")
+                time.sleep(1.5)
                 player_guess.board[row][column] = HIT
                 player_turn += 1
                 player_guess.shields_counter()
                 player_guess.display_board()
                 cpu_shields -= 1
                 print("Brace yourself Sir, the enemy are attacking...")
-                time.sleep(1)
+                time.sleep(1.5)
                 if cpu_shields == 0:
                     print("Sir, enemy shields are depleted, \
 they're retreating!")
                     print("We have won!!")
                     print(" ")
+                    time.sleep(1.5)
                     print(END_OF_ROUND)
+                    os.system("clear")
                     break
             else:
                 print(" ")
