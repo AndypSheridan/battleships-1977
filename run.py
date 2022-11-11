@@ -27,7 +27,7 @@ def start_screen():
     each time the game begins.
     See credits for ASCII art.
     """
-    print("A long time ago, in a galaxy far, far away...")
+    print("\nA long time ago, in a galaxy far, far away...\n")
     print("""
                                                                                     
     +             +             +                         +            
@@ -45,6 +45,7 @@ def start_screen():
                               +                +
                    +                  +             +
     """)
+    time.sleep(2)
     input("Press Enter...")
     os.system("clear")
     print("""\
@@ -90,6 +91,7 @@ can wipe us out.")
     print("Targeting scanners reveals the enemy have four ships of varying \
 size.")
     print("\nFortunately we have four ships of our own...")
+    time.sleep(1.5)
     print("\nA stolen Imperial Star Destroyer (length: 4)")
     print("\nA CR90 Corvette (length: 3)")
     print("\nThe Millennium Falcon with functioning hyperdrive (length: 2)")
@@ -107,9 +109,13 @@ def game_rules():
     print("Please note the following...")
     time.sleep(2)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet")
+    time.sleep(1)
     print(f"Coordinates marked {SHIP} represent a spaceship")
+    time.sleep(1)
     print(f"Coordinates marked {HIT} show a hit or destroyed enemy")
+    time.sleep(1)
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed")
+    time.sleep(1)
     input("\nPress Enter to continue...")
     os.system("clear")
     print("The enemy are using the same shield configuration as us, \
