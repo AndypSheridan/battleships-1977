@@ -1,9 +1,10 @@
 """
 Import modules:
 random used for random choice and number.
-time is used to allow the usertime to read or simulate cpu
-decision making.
-re to allow checking if a regular expression matches a string
+time is used to allow the user time to read
+or simulate cpu decision making.
+re to allow checking if a regular expression
+matches a string.
 """
 import random
 import time
