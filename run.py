@@ -93,9 +93,10 @@ def game_rules():
     print(f"Coordinates marked {ALREADY_GUESSED} have already been guessed")
     input("\nPress Enter to continue...")
     os.system("clear")
-    print("The enemy are using the same shield configuration as us, Commander")
-    print("Ten direct hits on the enemy will give us the victory!")
-    print("Unfortunately, we can also only withstand ten direct hits.")
+    print("The enemy are using the same shield configuration as us, \
+Commander/n")
+    print("Ten direct hits on the enemy will give us the victory!/n")
+    print("Unfortunately, we can also only withstand ten direct hits./n")
     input("Press Enter to continue...")
     os.system("clear")
 
@@ -439,6 +440,7 @@ they're retreating!")
                 print(" ")
                 print(END_OF_ROUND)
                 print("\nMissiles have missed, Sir!\n")
+                time.sleep(1.5)
                 player_guess.board[row][column] = ALREADY_GUESSED
                 player_turn += 1
                 player_guess.display_board()
