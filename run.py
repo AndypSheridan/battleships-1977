@@ -54,7 +54,7 @@ def get_name():
     Stores the name for use in the game.
     """
     player_name = input("Welcome to BattleShips 1977, \
-please enter your name... ")
+please enter your name... \n")
     return player_name
 
 
@@ -94,7 +94,7 @@ def game_rules():
     input("\nPress Enter to continue...")
     os.system("clear")
     print("The enemy are using the same shield configuration as us, Commander")
-    print("Ten direct hits up on the enemy will give us the victory!")
+    print("Ten direct hits on the enemy will give us the victory!")
     print("Unfortunately, we can also only withstand ten direct hits.")
     input("Press Enter to continue...")
     os.system("clear")
@@ -443,7 +443,7 @@ they're retreating!")
                 player_turn += 1
                 player_guess.display_board()
                 print("Brace yourself Sir, the enemy are attacking...")
-                time.sleep(1)
+                time.sleep(1.5)
         if cpu_turn == player_turn:
             row, column = cpu_guess.player_attack()
             if cpu_guess.board[row][column] == ALREADY_GUESSED:
@@ -452,6 +452,7 @@ they're retreating!")
                 pass
             elif player_board.board[row][column] == SHIP:
                 print("Sir, the enemy have hit one of our ships!\n")
+                time.sleep(1.5)
                 cpu_turn += 1
                 player_shields -= 1
                 cpu_guess.columns.append(column)
@@ -469,6 +470,7 @@ they're retreating!")
                     break
             else:
                 print("Sir, they have missed our ships!\n")
+                time.sleep(1.5)
                 cpu_guess.board[row][column] = ALREADY_GUESSED
                 cpu_turn += 1
                 player_board.display_board()
