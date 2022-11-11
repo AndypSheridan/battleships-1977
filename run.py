@@ -529,6 +529,7 @@ they're retreating!")
                 time.sleep(1)
                 if player_shields == 0:
                     print("C3PO: Sir, our shields are depleted, we're doomed!")
+                    lose_screen()
                     print(" ")
                     print(END_OF_ROUND)
                     break
