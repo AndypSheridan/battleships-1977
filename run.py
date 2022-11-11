@@ -48,7 +48,8 @@ def get_name():
     Prompts the user to enter their name.
     Stores the name for use in the game.
     """
-    player_name = input("\nWelcome to BattleShips 1977, please enter your name...")
+    player_name = input("Welcome to BattleShips 1977, \
+please enter your name... ")
     return player_name
 
 
@@ -177,13 +178,15 @@ class Board:
         print("Commander, make sure the ships do not collide!")
         if ship_size == 4:
             print(" ")
-            print("We've stolen an Imperial Star Destroyer(4), let's deploy it now!\n")
+            print("We've stolen an Imperial Star Destroyer(4), \
+let's deploy it now!\n")
         elif ship_size == 3:
             print(" ")
             print("Let's deploy our CR90 Corvette(3)\n")
         elif ship_size == 2:
             print(" ")
-            print("The Millennium Falcon(2) has been repaired, let's place it\n")
+            print("The Millennium Falcon(2) has been repaired, \
+let's place it\n")
         elif ship_size == 1:
             print("We have an X-wing(1) ready to go, let's place that too!")
 
@@ -239,7 +242,9 @@ class Board:
                     row = random.randint(0, 5)
                     column = random.randint(0, 5)
                     if self.place_ships(ship_size, row, column, orientation):
-                        if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
+                        if self.check_ship_placement(
+                            self.board, row, column, orientation, ship_size
+                                ) is False:
                             if orientation == "H":
                                 for i in range(column, column + ship_size):
                                     self.board[row][i] = SHIP
@@ -251,8 +256,11 @@ class Board:
                     if self.user == "player":
                         self.ship_type(ship_size)
                         orientation, column, row = self.player_ship_placement()
-                        if self.place_ships(ship_size, row, column, orientation):
-                            if self.check_ship_placement(self.board, row, column, orientation, ship_size) is False:
+                        if self.place_ships(
+                                ship_size, row, column, orientation):
+                            if self.check_ship_placement(
+                                self.board, row, column, orientation, ship_size
+                                    ) is False:
                                 if orientation == "H":
                                     for i in range(column, column + ship_size):
                                         self.board[row][i] = SHIP
@@ -321,7 +329,8 @@ class Board:
                 try:
                     column = input("Please select a column A-F: \n").upper()
                     if not re.match("^[A-F]*$", column):
-                        print("Sir, those coordinates are out of range...please enter a number 0-5: ")
+                        print("Sir, those coordinates are out of range...\
+please enter a number 0-5: ")
                     else:
                         column = self.col_letters_as_numbers[column]
                         break
@@ -398,7 +407,8 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
                 print("Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1)
                 if cpu_shields == 0:
-                    print("Sir, enemy shields are depleted, they're retreating!")
+                    print("Sir, enemy shields are depleted, \
+they're retreating!")
                     print("We have won!!")
                     print(" ")
                     print(END_OF_ROUND)
