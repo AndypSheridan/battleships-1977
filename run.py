@@ -28,7 +28,25 @@ def start_screen():
     See credits for ASCII art.
     """
     print("A long time ago, in a galaxy far, far away...")
+    print("""
+                                                                                    
+    +             +             +                         +            
+         +                +            +
+               +       +                       +    +
+ +                   +        
+                                 +        +
+       +           +
+                          +     +                +     +
+        +               +          +
+                      +
+                +                       +  +
+                      +            
+        +                +         +
+                              +                +
+                   +                  +             +
+    """)
     input("Press Enter...")
+    os.system("clear")
     print("""\
 
                  __________         __    __  .__                            
@@ -69,7 +87,7 @@ preparing to attack!")
 can wipe us out.")
     input("\nPress Enter to continue...")
     os.system("clear")
-    print("Radar reveals the enemy have four ships of varying size.")
+    print("Targeting scanners reveals the enemy have four ships of varying size.")
     print("\nFortunately we have four ships of our own...")
     print("\nA stolen Imperial Star Destroyer (length: 4)")
     print("\nA CR90 Corvette (length: 3)")
@@ -516,7 +534,7 @@ def main():
     """
     start_screen()
     player_name = get_name()
-    print(f"Welcome, Commander {player_name}, may the force be with us!")
+    print(f"\nWelcome, Commander {player_name}, may the force be with us!\n")
     back_story()
     game_rules()
     print("Now, we must deploy our fleet, we have four ships...")
