@@ -4,7 +4,7 @@ random used for random choice and number.
 time is used to allow the user time to read
 or simulate cpu decision making.
 os is used to prevent overloading the display
-re to check user input is valid
+re to check owner input is valid
 matches a string.
 """
 import random
@@ -80,7 +80,7 @@ please enter your name... ")
 def back_story():
     """
     Displays a simple back story to the user.
-    Uses time module to allow user time to process the text.
+    Uses time module to allow owner time to process the text.
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!\n")
@@ -107,7 +107,7 @@ size.")
 def game_rules():
     """
     Displays rules and legend to the user.
-    Uses time module to allow user to process the text.
+    Uses time module to allow owner to process the text.
     """
     print("Targeting scanners are ready!\n")
     print("Please note the following...")
@@ -167,13 +167,13 @@ class Board:
     Only player and player guess boards will
     be displayed in the game.
     """
-    def __init__(self, name, user):
+    def __init__(self, name, owner):
         # List comprehension to create board
         self.board = [[EMPTY] * 6 for i in range(6)]
         # Sets first four computer attacks
         self.cpu_attacks = [1, 1, 1, 1]
         self.name = name
-        self.user = user
+        self.owner = owner
         # Defines board columns
         self.columns = [6]
         # Defines board rows
@@ -189,7 +189,7 @@ class Board:
     }
 
     """
-    Variable to store converted column letters as 
+    Variable to store converted column letters as
     numbers when determining y-axis coordinates.
     """
     col_letters_as_numbers = {
@@ -216,7 +216,7 @@ class Board:
         Related to placing ships on board.
         Method defines ship sizes.
         Informs user of ship type and size.
-        If elif statement runs through ships sequentially
+        If/elif statement runs through ships sequentially
         in decresing order of size.
         """
         print("Please select horizontal \u2192 or vertical \u2193 orientation")
@@ -243,7 +243,7 @@ let's place it\n")
         """
         if orientation == "H":
             if column + ship_size > 6:
-                if self.user == "player":
+                if self.owner == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
                 else:
@@ -252,7 +252,7 @@ let's place it\n")
                 return True
         else:
             if row + ship_size > 6:
-                if self.user == "player":
+                if self.owner == "player":
                     print("Sir, that is out of range, try again!\n")
                     return False
                 else:
@@ -262,7 +262,7 @@ let's place it\n")
 
     def player_ship_input(self):
         """
-        Asks the user for their preferred orientation,
+        Prompts the user for their preferred orientation,
         row and column.
         Validates input and provides feedback to user
         if invalid input is entered.
@@ -308,7 +308,7 @@ let's place it\n")
         if orientation == "H":
             for i in range(column, column + ship_size):
                 if board[row][i] == SHIP:
-                    if self.user == "player":
+                    if self.owner == "player":
                         print("\nWe've already placed a ship here, sir...")
                         print("Let's try that again!\n")
                         return True
@@ -317,7 +317,7 @@ let's place it\n")
         else:
             for i in range(row, row + ship_size):
                 if board[i][column] == SHIP:
-                    if self.user == "player":
+                    if self.owner == "player":
                         print("\nWe've already placed a ship here, sir...")
                         print("Let's try that again!\n")
                         return True
@@ -333,7 +333,7 @@ let's place it\n")
         size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
             while True:
-                if self.user == "cpu":
+                if self.owner == "cpu":
                     orientation = random.choice(["H", "V"])
                     row = random.randint(0, 5)
                     column = random.randint(0, 5)
@@ -349,7 +349,7 @@ let's place it\n")
                                     self.board[i][column] = SHIP
                             break
                 else:
-                    if self.user == "player":
+                    if self.owner == "player":
                         self.ship_type(ship_size)
                         orientation, column, row = self.player_ship_input()
                         if self.place_ships(
@@ -415,13 +415,13 @@ let's place it\n")
 
     def player_attack(self):
         """
-        Prompts player to input attack coordinates.
+        Prompts user to input attack coordinates.
         Uses cpu attack and row methods to determine
         cpu guesses.
         Returns cooordinates to be used in the game.
         """
         while True:
-            if self.user == "player":
+            if self.owner == "player":
                 print("C3PO: Sir, weapons are charged and ready!")
                 try:
                     column = input(
@@ -434,7 +434,7 @@ Please enter a number 0-5: ")
                         break
                 except KeyError:
                     print("C3PO: Sir, please enter a letter")
-            elif self.user == "cpu guess":
+            elif self.owner == "cpu guess":
                 column = self.cpu_attack_column()
                 if column == range(0, 6):
                     break
@@ -442,7 +442,7 @@ Please enter a number 0-5: ")
                     column = random.randint(0, 5)
                     break
         while True:
-            if self.user == "player":
+            if self.owner == "player":
                 try:
                     row = input("C3PO: Please select a row 0-5: ")
                     if row in self.valid_row_input:
@@ -452,7 +452,7 @@ Please enter a number 0-5: ")
                         raise ValueError
                 except ValueError:
                     print("C3PO: Please Enter a number 0-5")
-            elif self.user == "cpu guess":
+            elif self.owner == "cpu guess":
                 row = self.cpu_attack_row()
                 if row == range(0, 6):
                     break
@@ -480,7 +480,7 @@ Please enter a number 0-5: ")
 def play_game(player_board, player_guess, cpu_board, cpu_guess):
     """
     Contains game logic.
-    Ensures player goes first
+    Ensures user goes first
     """
     player_turn = 0
     cpu_turn = 1
@@ -567,7 +567,7 @@ they're retreating!")
 def play_again():
     """
     Upon finishing the game,
-    The player is offered the choice
+    The user is offered the choice
     of playing another game or
     quitting.
     """
@@ -594,7 +594,7 @@ def main():
     """
     Runs all functions above to start new game.
     Shows start screen,
-    Prompts player for their name.
+    Prompts user for their name.
     Creates four instances of board class.
     Populates boards
     """
