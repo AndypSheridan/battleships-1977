@@ -216,6 +216,8 @@ class Board:
         Related to placing ships on board.
         Method defines ship sizes.
         Informs user of ship type and size.
+        If elif statement runs through ships sequentially
+        in decresing order of size.
         """
         print("Please select horizontal \u2192 or vertical \u2193 orientation")
         print("Commander, make sure the ships do not collide!")
