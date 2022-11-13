@@ -195,40 +195,16 @@ There are a several areas with scope for future improvement. This project has be
 ​
 ## **Testing Phase**
 ​
-**Responsiveness**
-
-* Responsiveness was tested extensively using Chrome Dev Tools. This proved invaluable when creating each page and was instrumental in helping me ensure responsiveness on multiple devices and screen sizes. The ability to experiment with the code saved a lot of trial and error within gitpod.
-* User testing was conducted on the following devices: Apple iPhone 12, Apple iPad Air 2021, Apple Macbook Air 2021, Apple MacBook Pro 2021. 
-* As I was limited to Apple devices only I sent the link to various friends and colleagues so they could check responsiveness on further devices including Windows desktop PCs, Amazon tablets and Samsung Galaxy S12. In each case, the pages responded as expected.
-* Using CSS grid was hugely helpful when it came to the splash screen and it resizes well regardless of the device.
-* When resizing the window using Chrome Dev Tools, from 415px and narrower, it may appear that the splash screen becomes crowded with a lot of space at the bottom of the screen. This is necessary to take into account the browser bar on mobile devices. 
-
-* **Splash Screen**
-
-![Screenshot of responsive splash screen](assets/images/hypercube-responsive-splash.png)
-
-* **Game Screen**
-
-![Screenshot of responsive game screen](assets/images/hypercube-responsive-game.png)
-​
-
 **Functionality**
 
-* Each feature was user-tested numerous times. All buttons or links were clicked or tapped and images checked.
-* On desktop and mobile, all buttons and controls function perfectly. The music and SFX toggle on and off as expected. 
-* The javascript functions as intended on desktop and mobile. 
-* The skip button functions perfectly regardless of the device.
-* The animated background functions well on desktop and mobile.
-* The game runs as expected on desktop and mobile. 
+* The game was played from start to finish multiple times.
+* To ensure validation was functioning as expected, invalid coordinates and inputs were entered which returned the expected results. 
+* It is not possible to begin the game without correctly positioning all ships.
+* The game ends as expected when the conditions for a win are satisfied.
+* The game will run until the conditions are satisfied.
+* The function to play a new game or quit functions as expected. 
 * The leaderboard functions as intended on desktop and mobile. 
-* I used *Lighthouse* to test each page. Results below:
-
-* ![hyperCube Lighthouse Report Desktop](assets/images/hypercube-lighthouse-desktop.png)
-* ![hyperCube Lighthouse Report Mobile](assets/images/hypercube-lighthouse-mobile.png)
-
-* The page performs well.
-* The desktop score performance score is 99% and the mobile score is 86%.
-* The game scores 100% in terms of accessibility, best practices and SEO.
+* The game was tested in a local terminal and on the live deployment on Heroku.
 
 ​
 **Validators**
