@@ -448,7 +448,8 @@ Please enter a number 0-5: ")
     def shields_counter(self):
         """
         Tracks cpu and player hits.
-        Deducts one from shield counter
+        Uses a nested for loop to deduct
+        one from shield counter
         on each successful hit.
         """
         counter = 10
