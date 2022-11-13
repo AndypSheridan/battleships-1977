@@ -80,7 +80,7 @@ please enter your name... ")
 def back_story():
     """
     Displays a simple back story to the user.
-    Uses time module to allow user to process the text.
+    Uses time module to allow user time to process the text.
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!\n")
@@ -357,7 +357,7 @@ let's place it\n")
         random_attack = random.randint(1, 2)
         return random_attack
 
-    def comp_attack_column(self):
+    def cpu_attack_column(self):
         """
         Holds logic for cpu attack.
         Returns a value for the row based
@@ -376,7 +376,7 @@ let's place it\n")
                 column = column_hit - 1
                 return column
 
-    def comp_attack_row(self):
+    def cpu_attack_row(self):
         """
         Holds the logic for cpu attack.
         Returns a value for the column based
@@ -398,7 +398,8 @@ let's place it\n")
     def player_attack(self):
         """
         Prompts player to input attack coordinates.
-        Uses AI methods to decide cpu attack coordinates.
+        Uses cpu attack and row methods to determine
+        cpu guesses.
         Returns cooordinates to be used in the game.
         """
         while True:
@@ -416,7 +417,7 @@ Please enter a number 0-5: ")
                 except KeyError:
                     print("C3PO: Sir, please enter a letter")
             elif self.user == "cpu guess":
-                column = self.comp_attack_column()
+                column = self.cpu_attack_column()
                 if column == range(0, 6):
                     break
                 else:
@@ -434,7 +435,7 @@ Please enter a number 0-5: ")
                 except ValueError:
                     print("C3PO: Please Enter a number 0-5")
             elif self.user == "cpu guess":
-                row = self.comp_attack_row()
+                row = self.cpu_attack_row()
                 if row == range(0, 6):
                     break
                 else:
