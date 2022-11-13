@@ -84,7 +84,7 @@ def back_story():
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!\n")
-    print("Take command of the fleet and destroy them before they \
+    print("Take command of our own ships and destroy them before they \
 can wipe us out.")
     input("\nPress Enter to continue...")
     os.system("clear")
