@@ -188,6 +188,7 @@ class Board:
         """
         Prints boards to the terminal.
         Displays shield strength.
+        See credits in Readme for further information
         """
         print(f"\nBoard: {self.name}\n")
         print("  A B C D E F ")
