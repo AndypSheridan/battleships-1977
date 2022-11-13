@@ -593,11 +593,11 @@ def play_again():
 
 def main():
     """
-    Runs all functions above to start new game.
+    Runs all functions and methods above to start new game.
     Shows start screen,
     Prompts user for their name.
     Creates four instances of board class.
-    Populates boards
+    Populates and updates relevant boards.
     """
     start_screen()
     player_name = get_name()
