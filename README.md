@@ -115,11 +115,7 @@ The game page uses the same radial gradient but there is animated effect of star
 ​
 #### **Typography**
 ​
-* Throughout the page and game, the following fonts are used:
-  * IBM Plex Mono (Regular 400) ('https://fonts.google.com/specimen/IBM+Plex+Mono?query=IBM+Pl') - This font was chosen to complement the sci-fi feel of the game and site. 
-  * Monospace - As a fallback font in the event IBM Plex Mono wasn't supported by the browser
-​
-* All fonts were sourced from Google fonts, as stated in the credits.
+* Not in the scope of this project.
 
 ​<br>
 
@@ -134,14 +130,7 @@ The game page uses the same radial gradient but there is animated effect of star
 
 ![Screenshot of favicon](assets/images/hyperCube-favicon-screenshot.png)
 ​
-#### **Toggle Music Button:**
-​
-* On both the splash screen and game screens, there is the option to toggle the music and game sound effects. This gives the user the option of starting the music as soon as the page has loaded. The music is atmospheric and helps to set the scene. If the user would prefer not to start the game with music, then they do not have to interact with the buttons at all but are free to do so later via a button on the canvas screen which performs the same function.
-* The buttons are responsive and respond to touch and mouse clicks.
 
-![Screenshot of splash screen button](assets/images/hyperCube-togglemusic-splash.png)
-![Screenshot of game button](assets/images/hypercube-togglemusic-game.png)
-​
 
 ## **Features**
 ​
