@@ -10,20 +10,14 @@ This edition of the game has been loosely based on the popular sci-fi series 'St
 
 It features space-based ASCII art, and contains various references to characters, vessels and ideologies from the movie. The intention was to provide a fresh and different setting to the classic game which is situated in an ocean and played with contemporary seafaring vessels such as aircraft carriers and frigate etc.
 
+The user is guided through some Star Wars-related imagery and text before being prompted to enter their name. The rules and legend are presented before the game requests the user place their ships on the board. There is the option to place the ships horizontally or vertically, and then the use must decide on x and y coordinates to assign the relevant ship.
 
-hyperCube is an endless, side-scrolling, jumping game in which the player has to jump a series of randomly spaced cubes or 'monoliths' that slide towards the player at increasing speed. The synopsis for the game is as follows: 
-"Whilst on a routine patrol at the edge of the galaxy, your hyperdrive malfunctioned, rupturing space and time. You have been pulled into an alternate 2D reality where the rules of our universe no longer apply. After crashing on a deserted world, the mysterious laws of this place have transformed your human body into a hyperCube. Stars drift towards the heavens and menacing black monoliths are drawn towards you with increasing speed. If there is any hope of escape from this place, you must first survive by jumping the monoliths."
+The CPU ships are assigned random coordinates. The game is designed so that the user goes first. Upon completion of the game, the user is presented with a screen informing them that they have either won or lost. Then they are asked if they wish to play again or quit.
 
-The synopsis is displayed on a splash screen which counts down from 20 before fading to the game page. Alternatively the user can skip the splash screen using the 'skip' button.
 
-The game has sound effects and music (see credits for details) which can be toggled on or off. The default setting is no sound or music. 
 
-The player jumps by pressing the space bar on devices with a keyboard or by tapping the screen on touch devices.
-
-There is a high score table which the user can add their name to; it stores the top five scores and there is a 'clear button' to remove those from local storage.
-
-![Am I Responsive Screenshot](assets/images/am-i-responsive-spashscreen.png)
-![Am I Responsive Screenshot](assets/images/am-i-responsive-gamescreen.png)
+![Am I Responsive Screenshot](assets/images/bs1977am-i-responsive.png)
+![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive-game.png)
 
 ​
 ## Table of contents:
