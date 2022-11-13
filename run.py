@@ -221,7 +221,7 @@ class Board:
         If/elif statement runs through ships sequentially
         in decreasing order of size.
         """
-        print("Please select horizontal \u2192 or vertical \u2193 orientation")
+        print("You can position ships horizontally \u2192 or vertically \u2193")
         print("Commander, make sure the ships do not collide!")
         if ship_size == 4:
             print(" ")
