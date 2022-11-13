@@ -250,7 +250,8 @@ let's place it\n")
         """
         Asks the user for their preferred orientation,
         row and column.
-        Provides feedback to user if invalid input is entered.
+        Validates input and provides feedback to user
+        if invalid input is entered.
         """
         while True:
             try:
