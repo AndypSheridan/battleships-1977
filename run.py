@@ -13,7 +13,7 @@ import os
 import re
 
 
-# Global variables allocated to tiles in game boards
+# Global variables used to update game boards
 END_OF_ROUND = "*" * 80
 ALREADY_GUESSED = "0"
 EMPTY = "-"
