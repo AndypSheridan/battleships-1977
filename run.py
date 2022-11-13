@@ -480,7 +480,8 @@ Please enter a number 0-5: ")
 def play_game(player_board, player_guess, cpu_board, cpu_guess):
     """
     Contains game logic.
-    Ensures user goes first
+    Ensures user goes first.
+    Adjust shield counter based on cpu and player guesses.
     """
     player_turn = 0
     cpu_turn = 1
