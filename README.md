@@ -109,13 +109,39 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of start screen](assets/images/bs77-start-screen.png)
 
-* The splash screen features a gradient background featuring the colours outlined above.
-* There is an h1 heading featuring the title of the game.
-* The music and SFX button is below the heading. By default, the music and SFX do not play. The button will toggle both.
-* The synopsis is in a bordered div and gives a brief story for the user in order to engage them in the game.
-* Beneath the synopsis is a countdown timer which counts from 20 seconds to zero, giving the user time to read the synopsis and/or toggle the music.
-* FInally, there is a skip button which gives the user the option of skipping the splash screen entirely, either when they are ready or if they have visited the site on multiple occasions.
-* All text is white (#FFF) to offer a contrast to the background and the borders are slightly softer (#DADBD0) to offer a softer contrast.
+* The start screen features the iconic Star Wars introduction: "A long time ago, in a galaxy far, far away..."
+* Beneath that is some very basic ASCII art depicting stars.
+* After a short time delay to allow the user to process the screen, they are prompted to press enter.
+
+![Screenshot of player name input](assets/images/bs77-name-input.png)
+
+* The os library is used to clear the screen and the user is then presented with ASCII text intended to simulate the Star Wars font.
+* They are prompted to enter their name and are presented with a short welcome message and short backstory explaining enemy ships have entered the area.
+* The user can press enter to proceed to the next screen.
+
+#### **Pre-Game**
+
+![Screenshot of ship types](assets/images/bs77-ship-types.png)
+
+* os is used to clear the terminal once again. The user is then presented with the four different types of ships at their disposal, along with the size of each. The ships are displayed sequentially in descending size order, on a slight delay using the time library.
+
+![Screenshot of legend](assets/images/bs77-legend.png)
+
+* Upon pressing enter, the legend is displayed to inform the player of symbols which will be used on the game boards. Once they have processed the information, they are prompted to press enter again.
+
+![Screenshot of win condition](assets/images/bs77-win-condition.png)
+
+* The following screen explains the win condition which states that ten hits will be enough to win the game. There is a final prompt to press enter.
+
+![Screenshot of player board and prompt to enter ship direction](assets/images/bs77-choose-direction.png)
+
+* os is used to clear the screen once again and the player board is printed to the terminal. It displays the player name and the shield strength at the starting value of 10. The player is asked to place a ship by choosing whether it will be aligned horizontally or vertically. Any input other than 'h'/'H' or 'v'/'V' will be invalid and the user will be asked to try again.
+
+#### **Gameplay**
+
+![Screenshot of player hitting ship](assets/images/bs77-hit-ship.png)
+
+
 
 #### **Game Start Screen** 
 ![Screenshot of start game and leaderboard screen](assets/images/hypercube-game-screenshot.png)
