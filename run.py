@@ -370,7 +370,7 @@ let's place it\n")
     def random_number(self):
         """
         Method returns a random number between 1 and 2.
-        Used to decide random cpu attack.
+        Used to determine a random cpu attack.
         """
         random_attack = random.randint(1, 2)
         return random_attack
@@ -402,7 +402,7 @@ let's place it\n")
         """
         row_hit = self.rows[-1]
         if row_hit == 6:
-            row = random.randint(0, 6)
+            row = random.randint(0, 5)
             return row
         else:
             random_attack = self.random_number()
@@ -416,7 +416,7 @@ let's place it\n")
     def player_attack(self):
         """
         Prompts user to input attack coordinates.
-        Uses cpu attack and row methods to determine
+        Uses cpu attack column and row methods to determine
         cpu guesses.
         Returns cooordinates to be used in the game.
         """
