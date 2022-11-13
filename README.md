@@ -14,7 +14,7 @@ The user is guided through some Star Wars-related imagery and text before being 
 
 The CPU ships are assigned random coordinates. The game is designed so that the user goes first. Upon completion of the game, the user is presented with a screen informing them that they have either won or lost. Then they are asked if they wish to play again or quit.
 
-Clear [here](https://battleships-1977.herokuapp.com/) to see the final deployment of the game
+Click [here](https://battleships-1977.herokuapp.com/) to see the final deployment of the game
 
 ![Am I Responsive Screenshot](assets/images/bs1977am-i-responsive.png)
 ![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive-game.png)
@@ -101,18 +101,6 @@ This is the flow chart which assisted the development of the game:
 * Not in the scope of this project.
 
 ​<br>
-
-## **Current Features Common to all Pages**
-
-#### **Favicon**
-
-* The favicon is a small image that displays in the browser tab. 
-* The intention is to enhance the user experience for those who have multiple tabs open and cannot read the text in the tabs.
-* The favicon is a simple lower case 'h' and upper case 'C' to reflect the styling of 'hyperCube' in the title of the game. The font color is the same (#DADBD0) as the one used on the splash and game screens, whilst the purple is found in the game canvas background.
-* For consistency, the font used is IBM Plex Mono.
-
-![Screenshot of favicon](assets/images/hyperCube-favicon-screenshot.png)
-​
 
 
 ## **Features**
