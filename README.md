@@ -63,11 +63,10 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 #### **User Stories:**
 * As a user, I want to understand the premise of the game.
 * As a user, I want to quickly learn and understand the rules of the game and its instructions.
-* As a user, I want to navigate the page to find what I require quickly and easily.
+* As a user, I want a clean and simple user interface (UI).
 * As a user, I want the game to run smoothly and bug-free.
-* As a user, I want to be able to control the music and SFX.
-* As a user, I want to be able to save my score in the leaderboard.
-* As a user, I want to be challenged.
+* As a user, I want to be able to choose whether or not to play again when the game ends.
+* As a user, I want to be able to win against the computer.
 
 ​
 #### **Site Aims:**
