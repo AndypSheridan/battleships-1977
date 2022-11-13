@@ -170,6 +170,7 @@ class Board:
     def __init__(self, name, user):
         # List comprehension to create board
         self.board = [[EMPTY] * 6 for i in range(6)]
+        # Sets first four computer attacks
         self.cpu_attacks = [1, 1, 1, 1]
         self.name = name
         self.user = user
@@ -366,9 +367,9 @@ let's place it\n")
 
     def cpu_attack_column(self):
         """
-        Holds logic for cpu attack.
-        Returns a value for the row based
-        off last hit ship on cpu guess board.
+        Determines cpu attack column.
+        Returns a column value based
+        on last hit ship on cpu guess board.
         """
         column_hit = self.columns[-1]
         if column_hit == 6:
@@ -385,9 +386,9 @@ let's place it\n")
 
     def cpu_attack_row(self):
         """
-        Holds the logic for cpu attack.
-        Returns a value for the column based
-        off last hit ship on comp_guess board.
+        Determines cpu attack row.
+        Returns a row value based
+        on last hit ship on cpu guess board.
         """
         row_hit = self.rows[-1]
         if row_hit == 6:
