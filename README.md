@@ -16,8 +16,8 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 
 Click [here](https://battleships-1977.herokuapp.com/) to see the final deployment of the game
 
-![Am I Responsive Screenshot](assets/images/bs1977am-i-responsive.png)
-![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive-game.png)
+![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive.png)
+![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive-name.png)
 
 ​
 ## Table of contents:
@@ -105,9 +105,9 @@ This is the flow chart which assisted the development of the game:
 
 ## **Features**
 ​
-#### **Splash Screen** 
+#### **Start Screen** 
 
-![Screenshot of top of splash screen](assets/images/hypercube-splash-screenshot.png)
+![Screenshot of start screen](assets/images/bs77-start-screen.png)
 
 * The splash screen features a gradient background featuring the colours outlined above.
 * There is an h1 heading featuring the title of the game.
