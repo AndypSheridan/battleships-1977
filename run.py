@@ -73,7 +73,7 @@ def get_name():
     Stores the name for use in the game.
     """
     player_name = input("Welcome to BattleShips 1977, \
-please enter your name... \n")
+please enter your name... ")
     return player_name
 
 
