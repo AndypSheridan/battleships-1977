@@ -54,10 +54,10 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 <br>
 
 #### **Target Audiences:**
-* People who like casual gaming​.
-* People who are looking for a simple yet challenging endless jumping game.
-* People looking for a browser-based game.
-* Aspiring developers looking for clearly-written JavaScript code and simple but effective logic.
+* People who like the classic Battleships​ game.
+* People who are looking for a science-fiction-based take on the classic game.
+* People looking for an online version of the game.
+* Aspiring coders looking for a simple but effective code.
 
 ​
 #### **User Stories:**
