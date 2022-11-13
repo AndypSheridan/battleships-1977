@@ -87,26 +87,11 @@ This is the flow chart which assisted the development of the game:
 
 ![Lucid Chart](assets/images/BS1977chart.png)
 
-#### **Wireframes:**
-
-Wireframes for each of the different screens were created using Balsamiq. This process provided a basic but clear outline of how each page would look as well as organising the content.
-
-* Splash Screen
-[Splash Screen Wireframe](assets/images/hyperCube-splash-wireframe.png)
-
-* Game Screen
-[Game Screen Wireframe](assets/images/hyperCube-game-wireframe.png)
-
-* Start Game and Leaderboard Card
-[Start Game](assets/images/hyperCube-overlay-card-wireframe.png)
 
 <br>​
 
 #### **Colour Scheme:**
 ​
-
-
-<br>
 
 * Not in the scope of this project, however I used cyan text for the start screen to evoke a connection with the Star Wars theme. I then used yellow for the subsequent text for the same reason.
 
@@ -247,9 +232,7 @@ The following bugs were identified during user testing:
 
 ## **Unfixed Bugs**
 
-* There is an issue when running the game in mobile compatibility mode on Dev Tools. The following error is logged to the console upon simulation of a touch event: "Unable to preventDefault inside passive event listener due to target being treated as passive." Although I was able to fix this, when I ran the game on Apple touch devices, the jump function no longer worked so it was not a viable solution.
-The bug does not affect the playability or performance of the game or page in any way, but this remains a minor bug for the time being.
-* One potential issue is on displays running at 120hz: the game works best at 60hz but will run faster if the screen refresh rate is at 120hz or higher. This isn't an issue for the majority of devices but it is important to note. Given more time, this is something I would investigate further.
+* There are no known unfixed bugs.
 
 ## **Deployment**
 I deployed the page on GitHub pages via the following procedure: -
