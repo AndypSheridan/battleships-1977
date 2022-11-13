@@ -267,6 +267,14 @@ I used the following technologies for the Battleships 1977 project:
 ​
 - Python
 
+## **Libraries**
+
+The following libraries were used:
+
+* Random - Used to generate random numbers for CPU ship placement, CPU guessing and CPU attacks.
+* OS - Used to clear the terminal so the user would not get overwhelmed with information.
+* RE - Used to check for valid column input.
+* Time - Used for pauses in flow of information and to simulate CPU decision making.
 
 ## **Software**
 
@@ -286,11 +294,11 @@ The following software was used:
 ​
 ### **Content:**
 
-* Core elements of the game mechanics use code written by YouTube user in the following video: Qixotl LFC https://www.youtube.com/watch?v=gnPekEXhkys
+* 
 
-* Whilst the game is now very different, this video gave me a good platform to create a very basic jumping game. Code has been attributed in the JavaScript file.
+* 
 
-* The leaderboard code is from the website Developer Drive: https://www.developerdrive.com/html5-javascript-gem-game-with-saved-scoreboard/
+* 
 
 
 ### **Media:**
