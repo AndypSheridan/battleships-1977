@@ -368,19 +368,7 @@ The following software was used:
 
 ### **Media:**
 
-* The background CSS code and HTML is copied from Riley Pearce on CodePen: https://codepen.io/riley-pearce/pen/OJWPjZM?fbclid=IwAR2HwzINeVhFg7-YQvFDV8Teh-IH6akXO9RY3uMTapRobDt-R9fJ6-GIMkY
-
-* The in-game jump SFX is from open source digital library https://archive.org/
-Here is the link: 
-Jump SFX: https://archive.org/download/jump_20210424/jump.wav
-
-* The game canvas background image was found on Freepik by Upkylick. The attribution is on the game screen. 
-The URL is "https://www.freepik.com/free-vector/cosmic-background-alien-planet-deserted-landscape-with-mountains_13924256.htm#query=game%20background&position=12&from_view=keyword"
-
-* The in-game music is freeware from Christopher at IndieGameMusic.com. 
-Here is the link to the file: https://www.indiegamemusic.com/viewtrack.php?id=5620
-
-* The favicon was generated using the online favicon generator at: https://favicon.io/
+* There was no media used for the scope of this project
 
 
 ### **Honorable mentions**
