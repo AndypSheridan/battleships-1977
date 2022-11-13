@@ -1,5 +1,5 @@
 # **Battleships 1977**
-## **Site Overview**
+## **Overview**
 
 
 Battleships 1977 is a python-based version of the classic Battleships board game. In this particular iteration of the game, the user plays against the computer in a turn-based competition where the objective is to eliminate all of the opponent's ships before their own are destroyed.
@@ -14,7 +14,7 @@ The user is guided through some Star Wars-related imagery and text before being 
 
 The CPU ships are assigned random coordinates. The game is designed so that the user goes first. Upon completion of the game, the user is presented with a screen informing them that they have either won or lost. Then they are asked if they wish to play again or quit.
 
-
+Clear [here](https://battleships-1977.herokuapp.com/) to see the final deployment of the game
 
 ![Am I Responsive Screenshot](assets/images/bs1977am-i-responsive.png)
 ![Am I Responsive Screenshot](assets/images/bs1977-am-i-responsive-game.png)
@@ -72,9 +72,9 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 ​
 #### **Site Aims:**
 * To offer the user a smooth and bug free version of a classic game with a slightly different twist.
-* To provide a clean and simple interface for the user.
-* To provide clear and simple instructions and a win condition.
-* To provide consistent well-written Python code to ensure the game operates as expected.
+* To provide a clean and simple interface for the user with no need to reference external sources.
+* To provide clear instructions and a win condition.
+* To provide an enjoyable user experience of playing battleships.
 * To provide an interesting and entertaining Star Wars-based version of the game.
 
 ​​
