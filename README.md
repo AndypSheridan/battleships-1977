@@ -300,8 +300,7 @@ The following software was used:
 
 ### **Honorable mentions**
 * Thank you to my mentor, Richard Wells, who gave a significant amount of his time to provide me with help, feedback and ideas on the project; he has been invaluable in so many ways and a genuine source of motivation for me.
-* Thanks to Code Institute for providing me with some basic knowledge of JavaScript.
+* Thanks to the Code Institute team for providing me with some basic knowledge of Python.
 * Thanks also to Codecademy which I used alongside to help reinforce my knowledge.
 * Thanks to the Code Institute community on Slack who helped remind me that everyone has difficult days.
-* A huge thank you to my partner Jess who is better at the game than me.
-* Thanks to my oldest son Arthur who said the game was too hard to begin with, but learned that perseverance pays off in the end!
+* A huge thank you to my family who support my coding journey on a daily basis.
