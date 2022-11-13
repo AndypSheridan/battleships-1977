@@ -4,7 +4,7 @@ random used for random choice and number.
 time is used to allow the user time to read
 or simulate cpu decision making.
 os is used to prevent overloading the display
-re to allow checking if a regular expression
+re to check user input is valid
 matches a string.
 """
 import random
