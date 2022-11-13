@@ -16,7 +16,7 @@ import re
 # Global variables used to update game boards
 END_OF_ROUND = "*" * 80
 ALREADY_GUESSED = "0"
-EMPTY = "-"
+EMPTY = "\u2022"
 SHIP = "§"
 HIT = "X"
 
