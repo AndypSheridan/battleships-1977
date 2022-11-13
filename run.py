@@ -30,20 +30,20 @@ def start_screen():
     print("\nA long time ago, in a galaxy far, far away...\n")
     print("""
                                                                                     
-    +             +             +                         +            
-         +                +            +
-               +       +                       +    +
- +                   +        
-                                 +        +
-       +           +
-                          +     +                +     +
-        +               +          +
-                      +
-                +                       +  +
-                      +            
-        +                +         +
-                              +                +
-                   +                  +             +
+    +             +             +               +          +       +       +       
+         +                +            +                      +              + 
+               +       +                       +    +                  +
+ +                   +        +                         +                  +     
+                                 +        +                  +               +
+       +           +                  +                         +         +
+                          +     +                +     +             +
+        +               +          +      +                 +              +
+   +          +         +                           +               +
+                +                       +  +            +                  +
+                      +            +                          +
+        +                +         +                               +        +
+    +         +                 +                +        +
+                   +                  +             +            +        +
     """)
     time.sleep(2)
     input("Press Enter...")
