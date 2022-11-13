@@ -336,24 +336,20 @@ The final deployment can be viewed [here](https://battleships-1977.herokuapp.com
 ​
 ## **Tech**
 ​
-I used the following technologies for the STA project:
+I used the following technologies for the Battleships 1977 project:
 ​
-- HTML
-- CSS
-- SCSS
-- JavaScript
+- Python
+
 
 ## **Software**
 
 The following software was used:
 
-- Gitpod to create, load and push my code to Github.
+- Gitpod and VS Code to create, load and push my code to Github.
 - Git (Gitpod and Github) as my version control for the site.
-- Audacity Desktop to convert and compress my .wav file to mp3.
-- Balsamiq wireframes software.
-- JShint online JavaScript code checker https://jshint.com/
-- W3C Markup Validation Service https://validator.w3.org/
-- W3C Jigsaw CSS Validation Service https://jigsaw.w3.org/css-validator/
+- Heroku to deploy the project.
+- Lucid Chart to develop the logic for the project.
+- https://patorjk.com/ to develop the ASCII art for the project
 ​
 
 <br>
