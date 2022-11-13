@@ -182,16 +182,13 @@ The game page uses the same radial gradient but there is animated effect of star
 ​
 ## **Future-Enhancements**
 ​
-There are a several areas with scope for future improvement. This project has been fun and challenging and I will continue to try to add the following features in my own time:
+There are a several areas with scope for future improvement. This project has been very challenging and ultimately the project deadline was looming. I would have liked to add the following:
 ​
-* Creating a sprite and sprite sheet for the player character.
-* Additional sound effects.
-* Add different types of obstacle or enemy.
-* The ability to collect items whilst jumping.
-* Platforms to jump on to.
-* The abiity to collect an item which slows down the obstacles temporarily.
-* The ability to move left and right.
-* Adding a parallax background.
+* Adding a player vs player option.
+* The option of skipping the rules and legend for returning players.
+* The option to randomly place player ships for quicker games.
+* An option to have small, medium or large boards with corresponding ship sizes.
+
 ​
 ## **Testing Phase**
 ​
