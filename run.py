@@ -198,6 +198,28 @@ class Board:
             row_number += 1
         print(f"Shield strength: {self.shields}\n")
 
+    def ship_type(self, ship_size):
+        """
+        Related to placing ships on board.
+        Method defines ship sizes.
+        Informs user of ship type and size.
+        """
+        print("Please select horizontal \u2192 or vertical \u2193 orientation")
+        print("Commander, make sure the ships do not collide!")
+        if ship_size == 4:
+            print(" ")
+            print("We've stolen an Imperial Star Destroyer(4), \
+let's deploy it now!\n")
+        elif ship_size == 3:
+            print(" ")
+            print("Let's deploy our CR90 Corvette(3)\n")
+        elif ship_size == 2:
+            print(" ")
+            print("The Millennium Falcon(2) has been repaired, \
+let's place it\n")
+        elif ship_size == 1:
+            print("We have an X-wing(1) ready to go, let's place that too!")
+
     def place_ships(self, ship_size, row, column, orientation):
         """
         Method to ensure user places a ship at
@@ -246,27 +268,6 @@ class Board:
                     else:
                         return True
         return False
-
-    def ship_type(self, ship_size):
-        """
-        Method defines ship sizes.
-        Informs user of ship type and size.
-        """
-        print("Please select horizontal \u2192 or vertical \u2193 orientation")
-        print("Commander, make sure the ships do not collide!")
-        if ship_size == 4:
-            print(" ")
-            print("We've stolen an Imperial Star Destroyer(4), \
-let's deploy it now!\n")
-        elif ship_size == 3:
-            print(" ")
-            print("Let's deploy our CR90 Corvette(3)\n")
-        elif ship_size == 2:
-            print(" ")
-            print("The Millennium Falcon(2) has been repaired, \
-let's place it\n")
-        elif ship_size == 1:
-            print("We have an X-wing(1) ready to go, let's place that too!")
 
     def player_ship_placement(self):
         """
