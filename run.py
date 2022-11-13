@@ -28,7 +28,8 @@ def start_screen():
     See credits for ASCII art.
     """
     print("\u001b[36m\nA long time ago, in a galaxy far, far away...\n")
-    print("""
+    time.sleep(1.5)
+    print("""\u001b[37m
                                                                                     
     +             +             +               +          +       +       +       
          +                +            +                      +              + 
@@ -46,7 +47,7 @@ def start_screen():
                    +                  +             +            +        +
     """)
     time.sleep(2)
-    input("Press Enter...")
+    input("\u001b[33mPress Enter...")
     os.system("clear")
     print("""\
 
