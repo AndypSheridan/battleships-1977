@@ -222,6 +222,7 @@ let's place it\n")
 
     def place_ships(self, ship_size, row, column, orientation):
         """
+        Related to ship placement.
         Method to ensure user places a ship at
         valid coordinates and not off the board.
         """
@@ -244,32 +245,7 @@ let's place it\n")
             else:
                 return True
 
-    def check_ship_placement(self, board, row, column, orientation, ship_size):
-        """
-        Method to ensure ships do not overlap when placed.
-        If coordinates overlap, prompts user to try again.
-        """
-        if orientation == "H":
-            for i in range(column, column + ship_size):
-                if board[row][i] == SHIP:
-                    if self.user == "player":
-                        print("\nWe've already placed a ship here, sir...")
-                        print("Let's try that again!\n")
-                        return True
-                    else:
-                        return True
-        else:
-            for i in range(row, row + ship_size):
-                if board[i][column] == SHIP:
-                    if self.user == "player":
-                        print("\nWe've already placed a ship here, sir...")
-                        print("Let's try that again!\n")
-                        return True
-                    else:
-                        return True
-        return False
-
-    def player_ship_placement(self):
+    def player_ship_input(self):
         """
         Asks the user for their preferred orientation,
         row and column.
@@ -308,6 +284,31 @@ let's place it\n")
                 print("R2D2: Beep...Please enter a valid number 0-5...boop")
         return orientation, column, row
 
+    def check_ship_placement(self, board, row, column, orientation, ship_size):
+        """
+        Method to ensure ships do not overlap when placed.
+        If coordinates overlap, prompts user to try again.
+        """
+        if orientation == "H":
+            for i in range(column, column + ship_size):
+                if board[row][i] == SHIP:
+                    if self.user == "player":
+                        print("\nWe've already placed a ship here, sir...")
+                        print("Let's try that again!\n")
+                        return True
+                    else:
+                        return True
+        else:
+            for i in range(row, row + ship_size):
+                if board[i][column] == SHIP:
+                    if self.user == "player":
+                        print("\nWe've already placed a ship here, sir...")
+                        print("Let's try that again!\n")
+                        return True
+                    else:
+                        return True
+        return False
+
     def populate_boards(self):
         """
         Populates player and cpu boards.
@@ -334,7 +335,7 @@ let's place it\n")
                 else:
                     if self.user == "player":
                         self.ship_type(ship_size)
-                        orientation, column, row = self.player_ship_placement()
+                        orientation, column, row = self.player_ship_input()
                         if self.place_ships(
                                 ship_size, row, column, orientation):
                             if self.check_ship_placement(
