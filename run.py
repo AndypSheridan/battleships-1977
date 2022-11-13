@@ -27,7 +27,7 @@ def start_screen():
     each time the game begins.
     See credits for ASCII art.
     """
-    print("\nA long time ago, in a galaxy far, far away...\n")
+    print("\u001b[36m\nA long time ago, in a galaxy far, far away...\n")
     print("""
                                                                                     
     +             +             +               +          +       +       +       

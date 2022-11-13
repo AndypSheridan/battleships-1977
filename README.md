@@ -57,6 +57,7 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 * People who like the classic Battleships​ game.
 * People who are looking for a science-fiction-based take on the classic game.
 * People looking for an online version of the game.
+* People who are fans of Star Wars.
 * Aspiring coders looking for a simple but effective code.
 
 ​
@@ -70,11 +71,11 @@ The CPU ships are assigned random coordinates. The game is designed so that the 
 
 ​
 #### **Site Aims:**
-* To offer a simple yet challenging experience to the user.
+* To offer the user a smooth and bug free version of a classic game with a slightly different twist.
 * To provide a clean and simple interface for the user.
-* To offer SFX and music based on the user's choice.
-* To offer the user the option of saving their high score, or to clear the current list.
-* To provide an interesting background to the canvas and game page with minimal distraction.
+* To provide clear and simple instructions and a win condition.
+* To provide consistent well-written Python code to ensure the game operates as expected.
+* To provide an interesting and entertaining Star Wars-based version of the game.
 
 ​​
 #### **Wireframes:**
