@@ -427,7 +427,7 @@ let's place it\n")
                 try:
                     column = input(
                         "C3PO: Weapons are ready! Please select a \
-                            column A-F: ").upper()
+column A-F: ").upper()
                     if not re.match("^[A-F]*$", column):
                         print("C3PO: Sir, those coordinates are out of range!\
 Please enter a number 0-5: ")
