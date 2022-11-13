@@ -1,5 +1,5 @@
 """
-Import modules:
+Libaries:
 random used for random choice and number.
 time is used to allow the user time to read
 or simulate cpu decision making.
@@ -30,7 +30,7 @@ def start_screen():
     print("\u001b[36m\nA long time ago, in a galaxy far, far away...\n")
     time.sleep(1.5)
     print("""\u001b[37m
-                                                                                    
+                                                                                
     +             +             +               +          +       +       +       
          +                +            +                      +              + 
                +       +                       +    +                  +
