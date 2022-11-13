@@ -168,11 +168,14 @@ class Board:
     be displayed in the game.
     """
     def __init__(self, name, user):
+        # List comprehension to create board
         self.board = [[EMPTY] * 6 for i in range(6)]
         self.cpu_attacks = [1, 1, 1, 1]
         self.name = name
         self.user = user
+        # Defines board columns
         self.columns = [6]
+        # Defines board rows
         self.rows = [6]
         self.shields = 10
 
