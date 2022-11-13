@@ -424,10 +424,10 @@ let's place it\n")
         """
         while True:
             if self.owner == "player":
-                print("C3PO: Sir, weapons are charged and ready!")
                 try:
                     column = input(
-                        "C3PO: Please select a column A-F: ").upper()
+                        "C3PO: Weapons are ready! Please select a \
+                            column A-F: ").upper()
                     if not re.match("^[A-F]*$", column):
                         print("C3PO: Sir, those coordinates are out of range!\
 Please enter a number 0-5: ")
