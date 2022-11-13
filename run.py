@@ -180,13 +180,17 @@ class Board:
         self.rows = [6]
         self.shields = 10
 
+    """
+    Stores valid row input to be used when
+    determining x axis coordinates.
+    """
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
     }
 
     """
     Variable to store converted column letters as 
-    numbers when determining column coordinates.
+    numbers when determining y-axis coordinates.
     """
     col_letters_as_numbers = {
         "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
