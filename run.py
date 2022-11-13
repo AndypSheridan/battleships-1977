@@ -183,6 +183,7 @@ class Board:
     """
     Stores valid row input to be used when
     determining x axis coordinates.
+    See credits in readme for further details.
     """
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
@@ -191,6 +192,7 @@ class Board:
     """
     Variable to store converted column letters as
     numbers when determining y-axis coordinates.
+    See credits in readme for further details.
     """
     col_letters_as_numbers = {
         "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
@@ -200,7 +202,7 @@ class Board:
         """
         Prints boards to the terminal.
         Displays shield strength.
-        See credits in Readme for further information
+        See credits in readme for further details.
         """
         print(f"\nBoard: {self.name}\n")
         print("  A B C D E F ")
@@ -217,7 +219,7 @@ class Board:
         Method defines ship sizes.
         Informs user of ship type and size.
         If/elif statement runs through ships sequentially
-        in decresing order of size.
+        in decreasing order of size.
         """
         print("Please select horizontal \u2192 or vertical \u2193 orientation")
         print("Commander, make sure the ships do not collide!")
