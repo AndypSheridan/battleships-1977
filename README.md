@@ -233,17 +233,9 @@ There are a several areas with scope for future improvement. This project has be
 ​
 **Validators**
 
-* HTML Validation using w3c validator -  passed validation
+* The PEP8 Online Validator was down when creating this project, however I added a PEP8 validator to my workspace by running the command: "pip3 install pycodestyle". The results can be found [here](assets/images/bs1977-pycodestyle.png)
 
-* ![HTML Validation Screenshot](assets/images/hypercube-html-validation.png)
-
-* CSS Validation using w3c jigsaw - passed validation
-
-* ![CSS Validation Screenshot](assets/images/hypercube-css-validation.png)
-
-* JavaScript Validation using jShint - passed validation with no major issues. The report states that there are two unused variables but they are integral to the game and called from the DOM. There are two warnings which refer to ternary expressions.
-
-* ![JavaScript code report](assets/images/hypercube-jshint-validation.png)
+* The validator flags a number of warnings, all of which are related to the use of the ASCII art used in the start screen, win screen and lose screen functions.
 
 ​
 ​
