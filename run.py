@@ -221,7 +221,8 @@ class Board:
         If/elif statement runs through ships sequentially
         in decreasing order of size.
         """
-        print("You can position ships horizontally \u2192 or vertically \u2193")
+        print("You can position ships horizontally \u2192 or \
+vertically \u2193")
         print("Commander, make sure the ships do not collide!")
         if ship_size == 4:
             print(" ")
@@ -237,13 +238,13 @@ let's place it\n")
         elif ship_size == 1:
             print("We have an X-wing(1) ready to go, let's place that too!")
 
-    def place_ships(self, ship_size, row, column, orientation):
+    def place_ships(self, ship_size, row, column, direction):
         """
         Related to ship placement.
         Method to ensure user places a ship at
         valid coordinates and not off the board.
         """
-        if orientation == "H":
+        if direction == "H":
             if column + ship_size > 6:
                 if self.owner == "player":
                     print("Sir, that is out of range, try again!\n")
@@ -264,16 +265,16 @@ let's place it\n")
 
     def player_ship_input(self):
         """
-        Prompts the user for their preferred orientation,
+        Prompts the user for their preferred direction,
         row and column.
         Validates input and provides feedback to user
         if invalid input is entered.
         """
         while True:
             try:
-                orientation = input("Select Ship Orientation (H or V): ")\
+                direction = input("Select Ship Direction (H or V): ")\
                     .upper()
-                if orientation == "H" or orientation == "V":
+                if direction == "H" or direction == "V":
                     break
                 else:
                     raise ValueError
@@ -300,14 +301,14 @@ let's place it\n")
                     raise ValueError
             except ValueError:
                 print("R2D2: Beep...Please enter a valid number 0-5...boop")
-        return orientation, column, row
+        return direction, column, row
 
-    def check_ship_placement(self, board, row, column, orientation, ship_size):
+    def check_ship_placement(self, board, row, column, direction, ship_size):
         """
         Method to ensure ships do not overlap when placed.
         If coordinates overlap, prompts user to try again.
         """
-        if orientation == "H":
+        if direction == "H":
             for i in range(column, column + ship_size):
                 if board[row][i] == SHIP:
                     if self.owner == "player":
@@ -336,14 +337,14 @@ let's place it\n")
         for ship_size in size_of_ships:
             while True:
                 if self.owner == "cpu":
-                    orientation = random.choice(["H", "V"])
+                    direction = random.choice(["H", "V"])
                     row = random.randint(0, 5)
                     column = random.randint(0, 5)
-                    if self.place_ships(ship_size, row, column, orientation):
+                    if self.place_ships(ship_size, row, column, direction):
                         if self.check_ship_placement(
-                            self.board, row, column, orientation, ship_size
+                            self.board, row, column, direction, ship_size
                                 ) is False:
-                            if orientation == "H":
+                            if direction == "H":
                                 for i in range(column, column + ship_size):
                                     self.board[row][i] = SHIP
                             else:
@@ -353,13 +354,13 @@ let's place it\n")
                 else:
                     if self.owner == "player":
                         self.ship_type(ship_size)
-                        orientation, column, row = self.player_ship_input()
+                        direction, column, row = self.player_ship_input()
                         if self.place_ships(
-                                ship_size, row, column, orientation):
+                                ship_size, row, column, direction):
                             if self.check_ship_placement(
-                                self.board, row, column, orientation, ship_size
+                                self.board, row, column, direction, ship_size
                                     ) is False:
-                                if orientation == "H":
+                                if direction == "H":
                                     for i in range(column, column + ship_size):
                                         self.board[row][i] = SHIP
                                 else:
