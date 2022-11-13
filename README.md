@@ -77,7 +77,16 @@ Clear [here](https://battleships-1977.herokuapp.com/) to see the final deploymen
 * To provide an enjoyable user experience of playing battleships.
 * To provide an interesting and entertaining Star Wars-based version of the game.
 
-​​
+
+#### **Lucid Chart:**
+
+To help with the planning stages​​ of this project, I used [LucidChart](https://www.lucidchart.com)
+This proved to be very useful tool when it came to visualising the various processes involved in recreating a Battleships style game. Whilst the concept is quite simple, the logic involved proved slightly more difficult.
+
+This is the flow chart which assisted the development of the game:
+
+![Lucid Chart](assets/images/BS1977chart.png)
+
 #### **Wireframes:**
 
 Wireframes for each of the different screens were created using Balsamiq. This process provided a basic but clear outline of how each page would look as well as organising the content.
@@ -95,9 +104,7 @@ Wireframes for each of the different screens were created using Balsamiq. This p
 
 #### **Colour Scheme:**
 ​
-For the splash screen I used a radial gradient: radial-gradient(ellipse at bottom, #758CDE 0%, #0C0D13 100%)
-On the game screen I used a pure CSS animation of tiny stars drifting towards the top of the screen (please see credits below)
-The canvas background is of a barren alien landscape (see credits)
+
 
 <br>
 
@@ -302,7 +309,28 @@ I deployed the page on GitHub pages via the following procedure: -
 ​
 The live site can be found can be found at the following URL - https://andypsheridan.github.io/hyperCube/
 
-***
+## ***Final Deployment to Heroku:***  
+  
+The project was deployed to [Heroku](https://www.heroku.com) using the below procedure:-    
+  
+1. **Log in to Heroku** or create an account if required.
+1. **click** the button labeled **New** from the dashboard in the top right corner, just below the header.
+1. From the drop-down menu **select "Create new app"**.
+1. **Enter a unique app name**. I combined my GitHub user name and the game's name with a dash between them (dnlbowers-battleship) for this project.
+1. Once the web portal shows the green tick to confirm the name is original **select the relevant region.** In my case, I chose Europe as I am in the UK.
+1.  When happy with your choice of name and that the correct region is selected, **click** on the **"Create app" button**.
+1. This will bring you to the project "Deploy" tab. From here, navigate to the **settings tab** and scroll down to the **"Config Vars" section**. 
+1. **Click** the button labelled **"Reveal Config Vars"** and **enter** the **"key" as port**, the **"value" as 8000** and **click** the **"add"** button.
+1. Scroll down to the **buildpacks section of the settings page** and click the button labeled **" add buildpack," select "Python," and click "Save Changes"**.
+1. **Repeat step 11 but** this time **add "node.js" instead of python**. 
+   * ***IMPORTANT*** The buildpacks must be in the correct order. If node.js is listed first under this section, you can click on python and drag it upwards to change it to the first buildpack in the list.
+1. Scroll back to the top of the settings page, and **navigate to the "Deploy" tab.**
+1. From the deploy tab **select Github as the deployment method**.
+1. **Confirm** you want to **connect to GitHub**.
+1. **Search** for the **repository name** and **click** the **connect** button next to the intended repository.
+1. From the bottom of the deploy page **select your preferred deployment type** by follow one of the below steps:  
+   * Clicking either "Enable Automatic Deploys" for automatic deployment when you push updates to Github.  
+   * Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment. 
 ​
 ## **Tech**
 ​
