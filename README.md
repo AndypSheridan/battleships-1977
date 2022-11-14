@@ -79,6 +79,7 @@ Click [here](https://battleships-1977.herokuapp.com/) to see the final deploymen
 * To provide an enjoyable user experience of playing battleships.
 * To provide an interesting and entertaining Star Wars-based version of the game.
 
+<br>
 
 #### **Lucid Chart:**
 
@@ -86,6 +87,7 @@ To help with the planning stages​​ of this project, I used [LucidChart](http
 This proved to be very useful tool when it came to visualising the various processes involved in recreating a Battleships style game. Whilst the concept is quite simple, the logic involved proved slightly more difficult.
 
 This is the flow chart which assisted the development of the game:
+
 
 ![Lucid Chart](assets/images/BS1977chart.png)
 
@@ -198,15 +200,15 @@ The following bugs were identified during user testing:
 
 <br>
 
-* 🐞 - The SFX ran by default on all devices which could be undesirable for many users.
-* ⚒️ - The corresponding JS function specified volume on page load.
-* ✅ - Set the volume to zero until the user clicks or taps the toggle music and SFX button
+* 🐞 - It was possible for both player and CPU to place ships off the board.
+* ⚒️ - There was an error in the populate_boards method.
+* ✅ - The entire method was re-written to take into account zero indexing.
 
 ​<br>
 
-* 🐞 - The game music had a hissing sound which affected the user experience.
-* ⚒️ - I used a .wav file which had become distorted after compression.
-* ✅ - Converted to an .mp3 file which was smaller than the compressed .wav file but sounds fine.
+* 🐞 - Upon re-writing the populate boards method, ship x and y coordinates were reversed so ships did not orient correctly.
+* ⚒️ - There was an error with the for loop in the nested if statement in the populate boards method.
+* ✅ - I reversed the values for row and column and this fixed the bug.
 
 <br>
 
