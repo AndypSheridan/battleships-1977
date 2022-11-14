@@ -168,10 +168,27 @@ There are a several areas with scope for future improvement. This project has be
 ​
 **Functionality**
 
-* The game was played from start to finish multiple times.
-* To ensure validation was functioning as expected, invalid coordinates and inputs were entered which returned the expected results. 
-* It is not possible to begin the game without correctly positioning all ships.
-* The game ends as expected when the conditions for a win are satisfied.
+Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
+Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
+Result 🏆: The game worked as anticipated with no errors.
+Verdict ✅: Test passed.
+
+Implementation 🏭: Check the input validation was working as expected.
+Test 🧪: Invalid inputs and types were entered multiple times at all possible opportunities.
+Result 🏆: The validation worked well. There were no occasions when it was possible to enter an invalid input.
+Verdict ✅: Test passed.
+
+Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
+Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
+Result 🏆: The game worked as anticipated with no errors.
+Verdict ✅: Test passed.
+
+Implementation 🏭: Check the game ends as expected and offers the play again option upon completion.
+Test 🧪: I played the game multiple times, winning and losing. I selected play again and quit at random.
+Result 🏆: The game worked as anticipated with no errors.
+Verdict ✅: Test passed.
+
+
 * The game will run until the conditions are satisfied.
 * The function to play a new game or quit functions as expected. 
 * The leaderboard functions as intended on desktop and mobile. 
