@@ -115,17 +115,17 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player name input](assets/images/bs77-name-input.png)
 
-* The os library is used to clear the screen and the user is then presented with ASCII text intended to emulate the Star Wars movie font. They are prompted to enter their name using the get_name function which stores the username in a variable for use in the game. They are then presented with a short welcome message and short backstory explaining enemy ships have entered the area. The user can press enter to proceed to the next screen.
+* The os.sys("clear") function is used to clear the screen and the user is then presented with ASCII text intended to emulate the Star Wars movie font. They are prompted to enter their name using the get_name function which stores the username in a variable for use in the game. They are then presented with a short welcome message and short backstory explaining enemy ships have entered the area. The user can press enter to proceed to the next screen.
 
 #### **Pre-Game**
 
 ![Screenshot of ship types](assets/images/bs77-ship-types.png)
 
-* os is used to clear the terminal once again. The user is then presented with the four different types of ships at their disposal, along with the size of each. The ships are displayed sequentially in descending size order, on a slight delay using the time library.
+* The same os function is used to clear the terminal once again. The ship_type method is called so the user is presented with the four different types of ships at their disposal, along with the size of each. The ships are displayed sequentially in descending size order, on a slight delay using the time library.
 
 ![Screenshot of legend](assets/images/bs77-legend.png)
 
-* Upon pressing enter, the legend is displayed to inform the player of symbols which will be used on the game boards. Once they have processed the information, they are prompted to press enter again.
+* Upon pressing enter, the game_rules function displays the symbols which will be used on the game boards. Once the user has processed the information, they are prompted to press enter again.
 
 ![Screenshot of win condition](assets/images/bs77-win-condition.png)
 
