@@ -602,7 +602,7 @@ def play_again():
             print(" ")
             print("Thank you for playing. May the force be with you...always")
             print(" ")
-            print(END_OF_ROUND)
+            exit()
             return False
         else:
             print(" ")
