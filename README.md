@@ -6,7 +6,7 @@ Battleships 1977 is a python-based version of the classic Battleships board game
 
 This game is played in a 6 x 6 tile grid. The user and CPU each have four ships of lengths one, two, three and four tiles. The player takes turns with the CPU to guess the coordinates of the opposing ships. When either the user or cpu hits and destroys all of them, the game is over.
 
-This edition of the game has been loosely based on the popular sci-fi series 'Star Wars' The original movie was released in 1977, hence the appendage to the title of the game.
+This edition of the game has been loosely based on the popular sci-fi saga 'Star Wars' The original movie was released in 1977, hence the appendage to the title of the game.
 
 The game is Python-based and uses a game Board class, functions, for loops, while loops and if/elif/else statements to achieve the desired outcome.
 
