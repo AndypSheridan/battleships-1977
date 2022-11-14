@@ -111,9 +111,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of start screen](assets/images/bs77-start-screen.png)
 
-* The start screen features the iconic Star Wars introduction: "A long time ago, in a galaxy far, far away..."
-* Beneath that is some very basic ASCII art depicting stars.
-* After a short time delay to allow the user to process the screen, they are prompted to press enter.
+* The start screen features the iconic Star Wars introduction: "A long time ago, in a galaxy far, far away..." Beneath that is some very basic ASCII art depicting stars. There a short time delay using ther time.sleep() function to allow the user to process the screen. They are then prompted to press enter.
 
 ![Screenshot of player name input](assets/images/bs77-name-input.png)
 
