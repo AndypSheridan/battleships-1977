@@ -373,52 +373,6 @@ let's place it\n")
                                 self.display_board()
                                 break
 
-    def random_number(self):
-        """
-        Method returns a random number between 1 and 2.
-        Used to determine a random cpu attack.
-        """
-        random_attack = random.randint(1, 2)
-        return random_attack
-
-    def cpu_attack_column(self):
-        """
-        Determines cpu attack column.
-        Returns a column value based
-        on last hit ship on cpu guess board.
-        """
-        column_hit = self.columns[-1]
-        if column_hit == 6:
-            column = random.randint(0, 5)
-            return column
-        else:
-            random_attack = self.random_number()
-            if random_attack == 1:
-                column = column_hit + 1
-                return column
-            elif random_attack == 2:
-                column = column_hit - 1
-                return column
-
-    def cpu_attack_row(self):
-        """
-        Determines cpu attack row.
-        Returns a row value based
-        on last hit ship on cpu guess board.
-        """
-        row_hit = self.rows[-1]
-        if row_hit == 6:
-            row = random.randint(0, 5)
-            return row
-        else:
-            random_attack = self.random_number()
-            if random_attack == 1:
-                row = row_hit + 1
-                return row
-            elif random_attack == 2:
-                row = row_hit - 1
-                return row
-
     def player_attack(self):
         """
         Prompts user to input attack coordinates.
@@ -466,6 +420,52 @@ Please enter a number 0-5: ")
                     row = random.randint(0, 5)
                     break
         return column, row
+
+    def random_number(self):
+        """
+        Method returns a random number between 1 and 2.
+        Used to determine a random cpu attack.
+        """
+        random_attack = random.randint(1, 2)
+        return random_attack
+
+    def cpu_attack_column(self):
+        """
+        Determines cpu attack column.
+        Returns a column value based
+        on last hit ship on cpu guess board.
+        """
+        column_hit = self.columns[-1]
+        if column_hit == 6:
+            column = random.randint(0, 5)
+            return column
+        else:
+            random_attack = self.random_number()
+            if random_attack == 1:
+                column = column_hit + 1
+                return column
+            elif random_attack == 2:
+                column = column_hit - 1
+                return column
+
+    def cpu_attack_row(self):
+        """
+        Determines cpu attack row.
+        Returns a row value based
+        on last hit ship on cpu guess board.
+        """
+        row_hit = self.rows[-1]
+        if row_hit == 6:
+            row = random.randint(0, 5)
+            return row
+        else:
+            random_attack = self.random_number()
+            if random_attack == 1:
+                row = row_hit + 1
+                return row
+            elif random_attack == 2:
+                row = row_hit - 1
+                return row
 
     def shields_counter(self):
         """

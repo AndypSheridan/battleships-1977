@@ -129,7 +129,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of win condition](assets/images/bs77-win-condition.png)
 
-* The following screen explains the win condition which states that ten hits will be enough to win the game. There is a final prompt to press enter.
+* The following text explains the win condition which states that ten hits will be enough to win the game. There is a final prompt to press enter.
 
 ![Screenshot of player board and prompt to enter ship direction](assets/images/bs77-choose-direction.png)
 
@@ -139,6 +139,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player hitting ship](assets/images/bs77-hit-ship.png)
 
+* The populate_boards method adds the user and CPU ships to their respective boards. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile.
 
 
 #### **Game Start Screen** 
