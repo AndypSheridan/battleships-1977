@@ -204,9 +204,9 @@ There are a several areas with scope for future improvement. This project has be
 ​
 The following bugs were identified during user testing:
 
-* 🐞 - At first it was not possible to get the music to play on any device.
-* ⚒️ - The file was unplayable when situated in my assets or audio folder.
-* ✅ - I added the audio file to the root directory and it worked.
+* 🐞 - When running the game it was possible for the user and CPU to place ships so that they overlapped.
+* ⚒️ - There were errors in the check_ship_placement method of the code.
+* ✅ - I made adjustments to the method to prevent any overlap.
 
 <br>
 
