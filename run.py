@@ -85,9 +85,18 @@ def back_story():
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!\n")
+    time.sleep(2)
+    os.system("clear")
+    print("Scanners detect an Imperial Star Destroyer (length: 4)\n")
+    time.sleep(1)
+    print("An Imperial Light Cruiser (length: 3)\n")
+    time.sleep(1)
+    print("An Imperial Frigate (length: 2)\n")
+    time.sleep(1)
+    print("An Imperial T.I.E. Fighter (length: 1)\n")
     time.sleep(1)
     print("Take command of our own ships and destroy them before they \
-can wipe us out.")
+can wipe us out.\n")
     time.sleep(1)
     input("\nPress Enter to continue...")
     os.system("clear")
