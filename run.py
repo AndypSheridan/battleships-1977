@@ -223,7 +223,7 @@ class Board:
         print("  +-+-+-+-+-+")
         row_number = 0
         for row in self.board:
-            print('%d|%s' % (row_number, ' '.join(row)))
+            print(f"{row_number}|{' '.join(row)}")
             row_number += 1
         print(f"Shield strength: {self.shields}\n")
 
