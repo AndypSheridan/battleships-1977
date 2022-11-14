@@ -232,7 +232,7 @@ The following bugs were identified during user testing:
 <br>
 
 * 🐞 - The game was printing too much text for the size of the terminal so the screen was overloaded with information.
-* ⚒️ - There is a lot of information to deliver to the user and it all diplayed at once which could be overwhelming.
+* ⚒️ - There is a lot of information to deliver to the user and it all displayed at once which could be overwhelming.
 * ✅ - Imported the os and time libraries so I could clear the terminal before delivering the next stage of the game, time was used to slow down printing to the terminal and also simulate computer thinking.
 
 
@@ -251,7 +251,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 1. **Log in to Heroku** or create an account if required.
 1. **click** the button labeled **New** from the dashboard in the top right corner, just below the header.
 1. From the drop-down menu **select "Create new app"**.
-1. **Enter a unique app name**. I combined my GitHub user name and the game's name with a dash between them (dnlbowers-battleship) for this project.
+1. **Enter a unique app name**. I chose battleships-1977 for this project, for reasons stated above.
 1. Once the web portal shows the green tick to confirm the name is original **select the relevant region.** In my case, I chose Europe as I am in the UK.
 1.  When happy with your choice of name and that the correct region is selected, **click** on the **"Create app" button**.
 1. This will bring you to the project "Deploy" tab. From here, navigate to the **settings tab** and scroll down to the **"Config Vars" section**. 
