@@ -4,7 +4,7 @@
 
 Battleships 1977 is a python-based version of the classic Battleships board game. In this particular iteration of the game, the user plays against the computer in a turn-based competition where the objective is to eliminate all of the opponent's ships before their own are destroyed.
 
-This game is played in a 6 x 6 tile grid. The user and CPU each have four ships of lengths one, two, three and four tiles. The player takes turns with the CPU to guess the coordinates of the opposing ships. When either the user or cpu hits and destroys all of them, the game is over.
+This game is played in a 6 x 6 tile grid. The user and CPU each have four ships of lengths one, two, three and four tiles. The player takes turns with the CPU to guess the coordinates of the opposing ships. When either the user or CPU hits and destroys all of them, the game is over.
 
 This edition of the game has been loosely based on the popular sci-fi saga 'Star Wars' The original movie was released in 1977, hence the appendage to the title of the game.
 
@@ -44,7 +44,7 @@ Click [here](https://battleships-1977.herokuapp.com/) to see the final deploymen
 1. [**Credits**](#credits)
     * [**Content**](#content)
     * [**Media**](#media)
-    * [**Honorable mentions**](#honorable-mentions)
+    * [**Honourable mentions**](#honorable-mentions)
 ​
 ## **Planning Stage**
 
@@ -112,7 +112,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of start screen](assets/images/bs77-start-screen.png)
 
-* The start screen features the iconic Star Wars introduction: "A long time ago, in a galaxy far, far away..." Beneath that is some very basic ASCII art depicting stars. There a short time delay using ther time.sleep() function to allow the user to process the screen. They are then prompted to press enter.
+* The start screen features the iconic Star Wars introduction: "A long time ago, in a galaxy far, far away..." Beneath that is some very basic ASCII art depicting stars. There a short time delay using the time.sleep() function to allow the user to process the screen. They are then prompted to press enter.
 
 ![Screenshot of player name input](assets/images/bs77-name-input.png)
 
@@ -141,7 +141,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player hitting ship](assets/images/bs77-hit-ship.png)
 
-* The populate_boards method adds the user and CPU ships to their respective boards. The user cannot see where the CPU ships are. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile. Click the highligghted text to see screenshots of the player entering invalid [row](assets/images/bs77-invalid-row.png) or [column](assets/images/bs77-invalid-column.png) coordinates. The user cannot enter the same coordinates twice. Most of the game logic is in the play_game function which handles updating and appending the relevant boards. It also handles decrementing the shield counter. The game will continue to run until either the player or CPU shield counters reaches zero.
+* The populate_boards method adds the user and CPU ships to their respective boards. The user cannot see where the CPU ships are. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the CPU will attempt to guess on an adjacent tile. Click the highlighted text to see screenshots of the player entering invalid [row](assets/images/bs77-invalid-row.png) or [column](assets/images/bs77-invalid-column.png) coordinates. The user cannot enter the same coordinates twice. Most of the game logic is in the play_game function which handles updating and appending the relevant boards. It also handles decrementing the shield counter. The game will continue to run until either the player or CPU shield counters reaches zero.
 
 
 #### **Game Over** 
@@ -168,26 +168,32 @@ There are a several areas with scope for future improvement. This project has be
 ​
 **Functionality**
 
-Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
-Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
-Result 🏆: The game worked as anticipated with no errors.
-Verdict ✅: Test passed.
+* Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
+* Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
+* Result 🏆: The game worked as anticipated with no errors.
+* Verdict ✅: Test passed.
 
-Implementation 🏭: Check the input validation was working as expected.
-Test 🧪: Invalid inputs and types were entered multiple times at all possible opportunities.
-Result 🏆: The validation worked well. There were no occasions when it was possible to enter an invalid input.
-Verdict ✅: Test passed.
+<br>
 
-Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
-Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
-Result 🏆: The game worked as anticipated with no errors.
-Verdict ✅: Test passed.
+* Implementation 🏭: Check the input validation was working as expected.
+* Test 🧪: Invalid inputs and types were entered multiple times at all possible opportunities.
+* Result 🏆: The validation worked well. There were no occasions when it was possible to enter an invalid input.
+* Verdict ✅: Test passed.
 
-Implementation 🏭: Check the game ends as expected and offers the play again option upon completion.
-Test 🧪: I played the game multiple times, winning and losing. I selected play again and quit at random.
-Result 🏆: The game worked as anticipated with no errors.
-Verdict ✅: Test passed.
+<br>
 
+* Implementation 🏭: I wanted to make sure the game performed as expected from start to finish.
+* Test 🧪: I played the game on a local terminal and on Heroku over thirty times.
+* Result 🏆: The game worked as anticipated with no errors.
+* Verdict ✅: Test passed.
+
+<br>
+
+* Implementation 🏭: Check the game ends as expected and offers the play again option upon completion.
+* Test 🧪: I played the game multiple times, winning and losing. I selected play again and quit at random.
+* Result 🏆: The game worked as anticipated with no errors.
+* Verdict ✅: Test passed.
+<br>
 ​
 **Validators**
 
@@ -316,7 +322,7 @@ The following software was used:
 * Course material on the CodeCademy website which helped reinforce my understanding of Python.
 
 
-### **Honorable mentions**
+### **Honourable mentions**
 * Thank you to my mentor, Richard Wells, who gave a significant amount of his time to provide me with help, feedback and ideas on the project; he has been invaluable in so many ways and a genuine source of motivation for me.
 * Thanks to the Code Institute team for providing me with some basic knowledge of Python.
 * Thanks to the Code Institute community on Slack who helped remind me that everyone has difficult days.
