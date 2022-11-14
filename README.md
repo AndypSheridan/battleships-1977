@@ -139,24 +139,15 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player hitting ship](assets/images/bs77-hit-ship.png)
 
-* The populate_boards method adds the user and CPU ships to their respective boards. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile. Click the highligghted text to see screenshots of the player entering invalid [row](assets/images/bs77-invalid-row.png) or [column](assets/images/bs77-invalid-column.png) coordinates. Most of the game logic is in the play_game function which handles updating and appending the relevant boards. It also handles decrementing the shield counter. The game will continue to run until either the player or CPU shield counters reaches zero.
+* The populate_boards method adds the user and CPU ships to their respective boards. The user cannot see where the CPU ships are. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile. Click the highligghted text to see screenshots of the player entering invalid [row](assets/images/bs77-invalid-row.png) or [column](assets/images/bs77-invalid-column.png) coordinates. Most of the game logic is in the play_game function which handles updating and appending the relevant boards. It also handles decrementing the shield counter. The game will continue to run until either the player or CPU shield counters reaches zero.
 
 
-#### **Game Start Screen** 
-![Screenshot of ](assets)
+#### **Game Over** 
+![Screenshot of play again option](assets/images/bs77-play-again.png)
+![Screenshot of choosing not to play again](assets/images/bs77-play-again-no.png)
 
-* 
+* Upon winning or losing the game, an ASCII-based message is displayed before the user is given the option of playing a new game. If this option is chosen, the game resets and starts from the beginning. If the user chooses to quit, they are presented with s short message in keeping with the theme of the game.
 
-#### **The Game Itself** 
-
-![Screenshot of game](assets/images/hypercube-gameplay.png)
-
-* Upon start, the player character (the white square) appears to move towards the black 'monoliths'. In terms of the game logic, it is actually only the monoliths that move.
-* The player character jumps through a press of the spacebar or a screen tap on mobile devices. Upon jumping the player character executes a perfect 360 degree jump.
-* For every 10 blocks that are successfully jumped, the speed of the black monoliths increases.
-* The player scores a point for every obsatcle that is successfully cleared.
-* As it is an endless jumper, the goal is to score highest on the leaderboard. 
-* If the player achieves a top 5 high score they are prompted to enter their name in the leaderboard. Alternatively, they can click cancel which logs 'Anonymous' to the leaderboard.
 
 <br>
 
