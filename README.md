@@ -280,25 +280,25 @@ The following software was used:
 - Heroku to deploy the project.
 - Lucid Chart to develop the logic for the project.
 - https://patorjk.com/ to develop the ASCII art for the project
-​
 
+### **Media:**
+
+* Not in the scope of this project.
+​
 <br>
 
 
 ## **Credits**
 ​
-### **Content:**
+
+* The idea to use the os library to clear the screen came from [this post](https://stackoverflow.com/questions/4810537/how-to-clear-the-screen-in-python) on Stack Overflow
+
+* The idea to use the time library
 
 * 
 
-* 
-
-* 
 
 
-### **Media:**
-
-* Not in the scope of this project.
 
 
 ### **Honorable mentions**
