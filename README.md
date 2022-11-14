@@ -115,9 +115,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player name input](assets/images/bs77-name-input.png)
 
-* The os library is used to clear the screen and the user is then presented with ASCII text intended to simulate the Star Wars font.
-* They are prompted to enter their name and are presented with a short welcome message and short backstory explaining enemy ships have entered the area.
-* The user can press enter to proceed to the next screen.
+* The os library is used to clear the screen and the user is then presented with ASCII text intended to emulate the Star Wars movie font. They are prompted to enter their name using the get_name function which stores the username in a variable for use in the game. They are then presented with a short welcome message and short backstory explaining enemy ships have entered the area. The user can press enter to proceed to the next screen.
 
 #### **Pre-Game**
 
