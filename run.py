@@ -113,6 +113,8 @@ def game_rules():
     print("Targeting scanners are ready!\n")
     print("Please note the following...")
     time.sleep(2)
+    print("The battle area is a 6 x 6 grid...")
+    time.sleep(1)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet\n")
     time.sleep(1)
     print(f"Coordinates marked {SHIP} represent a spaceship\n")
