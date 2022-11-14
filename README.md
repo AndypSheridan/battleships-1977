@@ -218,21 +218,10 @@ The following bugs were identified during user testing:
 
 <br>
 
-* 🐞 - The game was initially too hard.
-* ⚒️ - The speed of each block was too fast.
-* ✅ - Slowed the starting speed of the blocks and set them to move incrementally faster.
+* 🐞 - The game was printing too much text for the size of the terminal so the screen was overloaded with information.
+* ⚒️ - There is a lot of information to deliver to the user and it all diplayed at once which could be overwhelming.
+* ✅ - Imported the os and time libraries so I could clear the terminal before delivering the next stage of the game, time was used to slow down printing to the terminal and also simulate computer thinking.
 
-<br>
-
-* 🐞 - The skip button on the splash screen would be hidden by the browser bar on smaller mobile devices. This meant users who had played the game multiple occasiosn would have to wait for the countdown to finish.
-* ⚒️ - Whilst the page is responsive it dodn't take into account the browser bar.
-* ✅ - Adjusted the CSS grid spacing to take into account screen sizes of 415px and smaller which accounts for mobile devices.
-
-<br>
-
-* 🐞 - The score SFX would not play on loading of the page which was as intended, however upon toggling sound on and off it would continue to play even when the music and jump SFX would be muted.
-* ⚒️ - The score SFX had been tied to intricately to the game itself.
-* ✅ - I had been uncertain about the score SFX and although it worked well on desktop, there was sometimes a lag on certain mobile devices so I removed it altogether.
 
 <br>
 

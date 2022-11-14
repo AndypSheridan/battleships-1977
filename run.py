@@ -46,7 +46,7 @@ def start_screen():
     +         +                 +                +        +
                    +                  +             +            +        +
     """)
-    time.sleep(2)
+    time.sleep(1.5)
     input("\u001b[33mPress Enter...")
     os.system("clear")
     print("""\
@@ -112,7 +112,7 @@ def game_rules():
     """
     print("Targeting scanners are ready!\n")
     print("Please note the following...")
-    time.sleep(2)
+    time.sleep(1)
     print("The battle area is a 6 x 6 grid...")
     time.sleep(1)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet\n")
@@ -568,7 +568,7 @@ they're retreating!")
                 cpu_move += 1
                 player_board.display_board()
                 cpu_guess.cpu_attacks.append(1)
-                time.sleep(2)
+                time.sleep(1.5)
 
 
 def play_again():
