@@ -93,16 +93,12 @@ let's place it\n")
                 if self.owner == "player":
                     print("C3PO: Sir, that is out of range, try again!\n")
                     return False
-                else:
-                    return False
             else:
                 return True
         else:
             if row + ship_size > 6:
                 if self.owner == "player":
                     print("C3PO: Sir, that is out of range, try again!\n")
-                    return False
-                else:
                     return False
             else:
                 return True
@@ -160,8 +156,6 @@ let's place it\n")
 here, sir...")
                         print("Let's try that again!\n")
                         return True
-                    else:
-                        return True
         else:
             for i in range(row, row + ship_size):
                 if board[i][column] == SHIP:
@@ -169,8 +163,6 @@ here, sir...")
                         print("\nC3PO: We've already placed a ship \
 here, sir...")
                         print("Let's try that again!\n")
-                        return True
-                    else:
                         return True
         return False
 
@@ -230,7 +222,7 @@ here, sir...")
                         "C3PO: Weapons are ready! Please select a \
 column A-F: ").upper()
                     if not re.match("^[A-F]*$", column):
-                        print("C3PO: Sir, those coordinates are out of range!\
+                        print("C3PO: Sir, those coordinates are out of range! \
 Please enter a number 0-5: ")
                     else:
                         column = self.col_letters_as_numbers[column]
