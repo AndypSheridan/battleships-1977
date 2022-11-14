@@ -188,12 +188,6 @@ Test 🧪: I played the game multiple times, winning and losing. I selected play
 Result 🏆: The game worked as anticipated with no errors.
 Verdict ✅: Test passed.
 
-
-* The game will run until the conditions are satisfied.
-* The function to play a new game or quit functions as expected. 
-* The leaderboard functions as intended on desktop and mobile. 
-* The game was tested in a local terminal and on the live deployment on Heroku.
-
 ​
 **Validators**
 
