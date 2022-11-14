@@ -85,8 +85,10 @@ def back_story():
     """
     print("A hostile Imperial fleet has jumped from Hyperspace and is \
 preparing to attack!\n")
+    time.sleep(1)
     print("Take command of our own ships and destroy them before they \
 can wipe us out.")
+    time.sleep(1)
     input("\nPress Enter to continue...")
     os.system("clear")
     print("Targeting scanners reveals the enemy have four ships of varying \
@@ -113,7 +115,7 @@ def game_rules():
     print("Targeting scanners are ready!\n")
     print("Please note the following...")
     time.sleep(1)
-    print("The battle area is a 6 x 6 grid...")
+    print("\nThe battle area is a 6 x 6 grid...")
     time.sleep(1)
     print(f"\nCoordinates marked {EMPTY} have not been guessed yet\n")
     time.sleep(1)
@@ -250,7 +252,7 @@ let's place it\n")
         if direction == "H":
             if column + ship_size > 6:
                 if self.owner == "player":
-                    print("Sir, that is out of range, try again!\n")
+                    print("C3PO: Sir, that is out of range, try again!\n")
                     return False
                 else:
                     return False
@@ -259,7 +261,7 @@ let's place it\n")
         else:
             if row + ship_size > 6:
                 if self.owner == "player":
-                    print("Sir, that is out of range, try again!\n")
+                    print("C3PO: Sir, that is out of range, try again!\n")
                     return False
                 else:
                     return False
@@ -315,7 +317,8 @@ let's place it\n")
             for i in range(column, column + ship_size):
                 if board[row][i] == SHIP:
                     if self.owner == "player":
-                        print("\nWe've already placed a ship here, sir...")
+                        print("\nC3PO: We've already placed a ship \
+here, sir...")
                         print("Let's try that again!\n")
                         return True
                     else:
@@ -324,7 +327,8 @@ let's place it\n")
             for i in range(row, row + ship_size):
                 if board[i][column] == SHIP:
                     if self.owner == "player":
-                        print("\nWe've already placed a ship here, sir...")
+                        print("\nC3PO: We've already placed a ship \
+here, sir...")
                         print("Let's try that again!\n")
                         return True
                     else:
@@ -608,6 +612,7 @@ def main():
     start_screen()
     player_name = get_name()
     print(f"\nWelcome, Commander {player_name}, may the force be with us!\n")
+    time.sleep(1)
     back_story()
     game_rules()
     print("Now, we must deploy our fleet, we have four ships...")
