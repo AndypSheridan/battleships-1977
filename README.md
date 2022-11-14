@@ -139,17 +139,13 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player hitting ship](assets/images/bs77-hit-ship.png)
 
-* The populate_boards method adds the user and CPU ships to their respective boards. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile.
+* The populate_boards method adds the user and CPU ships to their respective boards. The game is set up so the user goes first. The player_attack method takes input from the user to guess enemy ship coordinates on the x and y axes. The first CPU guess is a random choice on the board. Upon a successful hit, the cpu will attempt to guess on an adjacent tile. Click the highligghted text to see screenshots of the player entering invalid [row](assets/images/bs77-invalid-row.png) or [column](assets/images/bs77-invalid-column.png) coordinates. Most of the game logic is in the play_game function which handles updating and appending the relevant boards. It also handles decrementing the shield counter. The game will continue to run until either the player or CPU shield counters reaches zero.
 
 
 #### **Game Start Screen** 
-![Screenshot of start game and leaderboard screen](assets/images/hypercube-game-screenshot.png)
+![Screenshot of ](assets)
 
-* Once the splash screen has counted down or been skipped, the game screen presents the user with the game canvas which is partially covered with the overlay card. The card features a start button which starts the game.
-* There is also a toggle music button which works in the same manner as the one on the splash screen. As there will be too little time to adjust these effects during gameplay, it makes most sense to have the button situated here.
-* The card also features the leaderboard which utilises local storage to save the top 5 high scores. The scores will remain in the browser on refresh and restart.
-* The clear button will remove all saved high scores from local storage ready for the table to be populated anew.
-* The background for this screen is a CSS animation which features small stars drifting slowly upwards. It was important to choose a background that wasn't too demanding in terms of processing power as well as one that minimised distraction during gameplay. However, I feel it contributes well to the overall atmosphere and immersion in the game. 
+* 
 
 #### **The Game Itself** 
 

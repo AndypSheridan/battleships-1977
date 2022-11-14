@@ -489,12 +489,12 @@ def play_game(player_board, player_guess, cpu_board, cpu_guess):
     Ensures user goes first.
     Adjust shield counter based on cpu and player guesses.
     """
-    player_turn = 0
-    cpu_turn = 1
     player_shields = 10
     cpu_shields = 10
+    player_move = 0
+    cpu_move = 1
     while True:
-        if player_turn < cpu_turn:
+        if player_move < cpu_move:
             player_guess.display_board()
             column, row = player_board.player_attack()
             if player_guess.board[row][column] == ALREADY_GUESSED:
@@ -509,7 +509,7 @@ these coordinates!\n")
                 print("C3PO: Great shot Sir, we hit a ship!\n")
                 time.sleep(1.5)
                 player_guess.board[row][column] = HIT
-                player_turn += 1
+                player_move += 1
                 player_guess.shields_counter()
                 player_guess.display_board()
                 cpu_shields -= 1
@@ -531,11 +531,11 @@ they're retreating!")
                 print("\nC3PO: Our missiles have missed, Sir!\n")
                 time.sleep(1.5)
                 player_guess.board[row][column] = ALREADY_GUESSED
-                player_turn += 1
+                player_move += 1
                 player_guess.display_board()
                 print("C3PO: Brace yourself Sir, the enemy are attacking...")
                 time.sleep(1.5)
-        if cpu_turn == player_turn:
+        if cpu_move == player_move:
             row, column = cpu_guess.player_attack()
             if cpu_guess.board[row][column] == ALREADY_GUESSED:
                 pass
@@ -544,7 +544,7 @@ they're retreating!")
             elif player_board.board[row][column] == SHIP:
                 print("C3PO: Sir, the enemy have hit one of our ships!\n")
                 time.sleep(1.5)
-                cpu_turn += 1
+                cpu_move += 1
                 player_shields -= 1
                 cpu_guess.columns.append(column)
                 cpu_guess.rows.append(row)
@@ -565,7 +565,7 @@ they're retreating!")
                 time.sleep(1.5)
                 cpu_guess.board[row][column] = ALREADY_GUESSED
                 player_board.board[row][column] = ALREADY_GUESSED
-                cpu_turn += 1
+                cpu_move += 1
                 player_board.display_board()
                 cpu_guess.cpu_attacks.append(1)
                 time.sleep(2)
