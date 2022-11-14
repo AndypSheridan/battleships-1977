@@ -8,7 +8,7 @@ This game is played in a 6 x 6 tile grid. The user and CPU each have four ships 
 
 This edition of the game has been loosely based on the popular sci-fi series 'Star Wars' The original movie was released in 1977, hence the appendage to the title of the game.
 
-The game is Python-based and uses OOP, a game board class, functions, for loops, while loops and if/elif/else statements to achieve the desired outcome.
+The game is Python-based and uses a game Board class, functions, for loops, while loops and if/elif/else statements to achieve the desired outcome.
 
 It features space-based ASCII art, and contains various references to characters, vessels and ideologies from the movie. The intention was to provide a fresh and different setting to the classic game which is situated in an ocean and played with contemporary seafaring vessels such as aircraft carriers and frigate etc.
 
