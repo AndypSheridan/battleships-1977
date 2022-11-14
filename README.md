@@ -125,7 +125,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of legend](assets/images/bs77-legend.png)
 
-* Upon pressing enter, the game_rules function displays the symbols which will be used on the game boards. Once the user has processed the information, they are prompted to press enter again.
+* Upon pressing enter, the game_rules function is called to display the symbols which will be used on the game boards. Once the user has processed the information, they are prompted to press enter again.
 
 ![Screenshot of win condition](assets/images/bs77-win-condition.png)
 
@@ -133,7 +133,7 @@ This is the flow chart which assisted the development of the game:
 
 ![Screenshot of player board and prompt to enter ship direction](assets/images/bs77-choose-direction.png)
 
-* os is used to clear the screen once again and the player board is printed to the terminal. It displays the player name and the shield strength at the starting value of 10. The player is asked to place a ship by choosing whether it will be aligned horizontally or vertically. Any input other than 'h'/'H' or 'v'/'V' will be invalid and the user will be asked to try again.
+* os is used to clear the screen once again and the player board is printed to the terminal. It displays the player name and the shield strength at the starting value of 10. The place_ships method is called so the player is asked to place each ship by choosing whether it will be aligned horizontally or vertically. Any input other than 'h'/'H' or 'v'/'V' will be invalid and the user will be asked to try again. The process will loop until all ships have been assigned coordinates.
 
 #### **Gameplay**
 
