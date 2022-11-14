@@ -128,9 +128,10 @@ This is the flow chart which assisted the development of the game:
 
 * Upon pressing enter, the game_rules function is called to display the symbols which will be used on the game boards. Once the user has processed the information, they are prompted to press enter again.
 
+* The following text explains the win condition which states that ten hits will be enough to win the game. There is a final prompt to press enter.
+
 ![Screenshot of win condition](assets/images/bs77-win-condition.png)
 
-* The following text explains the win condition which states that ten hits will be enough to win the game. There is a final prompt to press enter.
 
 ![Screenshot of player board and prompt to enter ship direction](assets/images/bs77-choose-direction.png)
 
