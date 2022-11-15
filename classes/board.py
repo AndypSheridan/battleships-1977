@@ -297,7 +297,7 @@ Please enter a number 0-5: ")
             if random_attack == 1:
                 row = row_hit + 1
                 return row
-            elif random_attack == 2:
+            if random_attack == 2:
                 row = row_hit - 1
                 return row
 
