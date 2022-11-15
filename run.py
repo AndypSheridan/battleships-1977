@@ -70,10 +70,14 @@ def start_screen():
 def get_name():
     """
     Prompts the user to enter their name.
+    Validates username.
     Stores the name for use in the game.
     """
-    player_name = input("Welcome to BattleShips 1977, \
+    while True:
+        player_name = input("Welcome to BattleShips 1977, \
 please enter your name... ")
+        if player_name.isalpha():
+            break
     return player_name
 
 
