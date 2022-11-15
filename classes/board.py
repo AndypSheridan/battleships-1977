@@ -235,9 +235,8 @@ Please enter a number 0-5: ")
                 column = self.cpu_attack_column()
                 if column == range(0, 6):
                     break
-                else:
-                    column = random.randint(0, 5)
-                    break
+                column = random.randint(0, 5)
+                break
         while True:
             if self.owner == "player":
                 try:
@@ -245,17 +244,15 @@ Please enter a number 0-5: ")
                     if row in self.valid_row_input:
                         row = int(row)
                         break
-                    else:
-                        raise ValueError
+                    raise ValueError
                 except ValueError:
                     print("C3PO: Please Enter a number 0-5")
             elif self.owner == "cpu guess":
                 row = self.cpu_attack_row()
                 if row == range(0, 6):
                     break
-                else:
-                    row = random.randint(0, 5)
-                    break
+                row = random.randint(0, 5)
+                break
         return column, row
 
     def random_number(self):
