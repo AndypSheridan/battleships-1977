@@ -199,7 +199,7 @@ There are a several areas with scope for future improvement. This project has be
 
 * The PEP8 Online Validator was down when creating this project, however I added a PEP8 validator to my workspace by running the command: "pip3 install pycodestyle". The results can be found [here](assets/images/bs1977-pycodestyle.png)
 
-* The validator flags a number of warnings, all of which are related to the use of the ASCII art used in the start screen, win screen and lose screen functions.
+* The validator flags a number of minor warnings, all of which are related to the use of the ASCII art used in the start screen, win screen and lose screen functions. In my final mentor session, I was informed these are inconsequential and can essentially be ignored as they do not affect the program itself.
 
 ​
 ​
