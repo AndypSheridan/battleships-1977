@@ -156,6 +156,8 @@ let's place it\n")
 here, sir...")
                         print("Let's try that again!\n")
                         return True
+                    else:
+                        return True
         else:
             for i in range(row, row + ship_size):
                 if board[i][column] == SHIP:
@@ -163,6 +165,8 @@ here, sir...")
                         print("\nC3PO: We've already placed a ship \
 here, sir...")
                         print("Let's try that again!\n")
+                        return True
+                    else:
                         return True
         return False
 
