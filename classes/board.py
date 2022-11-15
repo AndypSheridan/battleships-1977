@@ -112,8 +112,8 @@ let's place it\n")
         """
         while True:
             try:
-                direction = input("Select Ship Direction (H or V): ")\
-                    .upper()
+                direction = input(
+                    "Select Ship Direction (H or V): ").upper()
                 if direction == "H" or direction == "V":
                     break
                 else:
@@ -170,6 +170,7 @@ here, sir...")
         """
         Populates player and cpu boards.
         CPU ship placement is decided randomly.
+        See credits in readme for further details.
         """
         size_of_ships = [4, 3, 2, 1]
         for ship_size in size_of_ships:
