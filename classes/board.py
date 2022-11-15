@@ -114,10 +114,9 @@ let's place it\n")
             try:
                 direction = input(
                     "Select Ship Direction (H or V): ").upper()
-                if direction == "H" or direction == "V":
+                if direction in ("H", "V"):
                     break
-                else:
-                    raise ValueError
+                raise ValueError
             except ValueError:
                 print("R2D2: Beep...Invalid input, please try again...boop")
         while True:
@@ -156,8 +155,7 @@ let's place it\n")
 here, sir...")
                         print("Let's try that again!\n")
                         return True
-                    else:
-                        return True
+                    return True
         else:
             for i in range(row, row + ship_size):
                 if board[i][column] == SHIP:
@@ -166,8 +164,7 @@ here, sir...")
 here, sir...")
                         print("Let's try that again!\n")
                         return True
-                    else:
-                        return True
+                    return True
         return False
 
     def populate_boards(self):
