@@ -30,10 +30,12 @@ class Board:
         self.rows = [6]
         self.shields = 10
 
+    # See Credits in readme for further details
     valid_row_input = {
         "0", "1", "2", "3", "4", "5"
     }
 
+    # See credits in readme for further details
     col_letters_as_numbers = {
         "A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5
     }
@@ -212,6 +214,7 @@ here, sir...")
         Uses cpu attack column and row methods to determine
         cpu guesses.
         Returns cooordinates to be used in the game.
+        See credits in readme for further details.
         """
         while True:
             if self.owner == "player":
